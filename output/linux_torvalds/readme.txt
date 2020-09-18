@@ -1,1 +1,1 @@
-Coccicheck output from torvalds: https://github.com/torvalds/linux/tree/master/scripts/coccinelle
+Coccicheck output from torvalds: https://github.com/torvalds/linux/tree/master/scripts/coccinelle  
