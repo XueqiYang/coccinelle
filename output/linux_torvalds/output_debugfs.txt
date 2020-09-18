@@ -1,0 +1,6 @@
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+No available modes found in "scripts/coccinelle/debugfs/*" script.
+Consider adding virtual rules to the script.

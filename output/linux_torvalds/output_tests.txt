@@ -1,0 +1,46 @@
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+/Users/yangxueqi/Documents/zephyr/drivers/sensor/lps25hb/lps25hb.h:117:67-73: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/can/can_stm32.c:430:13-26: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:1-2: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:10-11: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:19-20: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:28-29: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:37-38: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:46-47: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:57:55-56: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:59:1-2: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:59:19-20: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:59:28-29: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:59:46-47: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:59:55-56: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:1-2: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:10-11: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:19-20: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:28-29: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:37-38: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:46-47: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:61:55-56: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:1-2: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:10-11: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:19-20: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:28-29: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:37-38: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:46-47: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:63:55-56: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/lib/http/http_parser_url.c:65:1-2: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/ip/tcp.c:1280:23-42: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2108:2-3: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2108:22-23: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2109:2-3: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2110:2-3: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2112:12-13: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2112:22-23: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2113:12-13: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/ieee802154/ieee802154_dw1000_regs.h:2114:22-23: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/sensor/bma280/bma280.h:73:29-50: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/include/drivers/interrupt_controller/gic.h:192:5-28: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/subsys/net/l2/ppp/misc.c:239:4-20: duplicated argument to & or |
+/Users/yangxueqi/Documents/zephyr/drivers/sensor/lps22hb/lps22hb.h:89:67-73: duplicated argument to & or |

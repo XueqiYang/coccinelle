@@ -1,0 +1,5 @@
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+/Users/yangxueqi/Documents/zephyr/drivers/modem/hl7800.c:2913:11-15: ERROR: sock is NULL but dereferenced.
