@@ -1,0 +1,486 @@
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+./drivers/net/ethernet/sun/sungem.c:2968:19-40: WARNING: casting value returned by memory allocation function to (struct gem_init_block *) is useless.
+./drivers/scsi/ibmvscsi/ibmvscsi.c:720:26-47: WARNING: casting value returned by memory allocation function to (struct srp_direct_buf *) is useless.
+./drivers/message/fusion/mptctl.c:2596:14-31: WARNING: casting value returned by memory allocation function to (SCSIDevicePage0_t *) is useless.
+./drivers/message/fusion/mptctl.c:2660:15-32: WARNING: casting value returned by memory allocation function to (SCSIDevicePage3_t *) is useless.
+./drivers/message/fusion/mptfc.c:766:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage0_t *) is useless.
+./drivers/message/fusion/mptfc.c:907:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage1_t *) is useless.
+./drivers/crypto/cavium/cpt/cptvf_main.c:236:17-19: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/net/ethernet/qlogic/qed/qed_rdma.c:1154:6-42: WARNING: casting value returned by memory allocation function to (struct rdma_destroy_cq_output_params *) is useless.
+./drivers/nfc/st21nfca/se.c:318:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.
+./include/rdma/ib_verbs.h:2275:3-17: WARNING: casting value returned by memory allocation function to (struct ib_type *) is useless.
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:283:24-49: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:287:25-50: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.
+./drivers/message/fusion/mptbase.c:5325:16-29: WARNING: casting value returned by memory allocation function to (IOUnitPage2_t *) is useless.
+./drivers/message/fusion/mptbase.c:4978:18-28: WARNING: casting value returned by memory allocation function to (LANPage0_t *) is useless.
+./drivers/message/fusion/mptbase.c:5024:17-27: WARNING: casting value returned by memory allocation function to (LANPage1_t *) is useless.
+./drivers/nfc/st-nci/se.c:334:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:1551:21-23: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:2067:23-25: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:1898:19-21: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/scsi/fnic/fnic_debugfs.c:61:16-41: WARNING: casting value returned by memory allocation function to (struct fc_trace_flag_type *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c:255:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c:893:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.
+diff -u -p ./drivers/message/fusion/mptctl.c /tmp/nothing/drivers/message/fusion/mptctl.c
+--- ./drivers/message/fusion/mptctl.c
++++ /tmp/nothing/drivers/message/fusion/mptctl.c
+@@ -2593,7 +2593,6 @@ mptctl_hp_targetinfo(MPT_ADAPTER *ioc, u
+        /* Get the data transfer speeds
+         */
+ 	data_sz = ioc->spi_data.sdp0length * 4;
+-	pg0_alloc = (SCSIDevicePage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);
+ 	if (pg0_alloc) {
+ 		hdr.PageVersion = ioc->spi_data.sdp0version;
+ 		hdr.PageLength = data_sz;
+@@ -2657,7 +2656,6 @@ mptctl_hp_targetinfo(MPT_ADAPTER *ioc, u
+ 		/* Issue the second config page request */
+ 		cfg.action = MPI_CONFIG_ACTION_PAGE_READ_CURRENT;
+ 		data_sz = (int) cfg.cfghdr.hdr->PageLength * 4;
+-		pg3_alloc = (SCSIDevicePage3_t *) pci_alloc_consistent(
+ 							ioc->pcidev, data_sz, &page_dma);
+ 		if (pg3_alloc) {
+ 			cfg.physAddr = page_dma;
+diff -u -p ./drivers/nfc/st21nfca/se.c /tmp/nothing/drivers/nfc/st21nfca/se.c
+--- ./drivers/nfc/st21nfca/se.c
++++ /tmp/nothing/drivers/nfc/st21nfca/se.c
+@@ -315,7 +315,6 @@ int st21nfca_connectivity_event_received
+ 		    skb->data[0] != NFC_EVT_TRANSACTION_AID_TAG)
+ 			return -EPROTO;
+ 
+-		transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 						   skb->len - 2, GFP_KERNEL);
+ 		if (!transaction)
+ 			return -ENOMEM;
+diff -u -p ./drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c /tmp/nothing/drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c
+--- ./drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c
++++ /tmp/nothing/drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c
+@@ -252,7 +252,6 @@ static int init_powerplay_table_informat
+ 	phm_copy_clock_limits_array(hwmgr, &pptable_information->power_saving_clock_max, powerplay_table->PowerSavingClockMax, ATOM_VEGA12_PPCLOCK_COUNT);
+ 	phm_copy_clock_limits_array(hwmgr, &pptable_information->power_saving_clock_min, powerplay_table->PowerSavingClockMin, ATOM_VEGA12_PPCLOCK_COUNT);
+ 
+-	pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);
+ 	if (pptable_information->smc_pptable == NULL)
+ 		return -ENOMEM;
+ 
+diff -u -p ./drivers/net/ethernet/qlogic/qed/qed_rdma.c /tmp/nothing/drivers/net/ethernet/qlogic/qed/qed_rdma.c
+--- ./drivers/net/ethernet/qlogic/qed/qed_rdma.c
++++ /tmp/nothing/drivers/net/ethernet/qlogic/qed/qed_rdma.c
+@@ -1151,7 +1151,6 @@ qed_rdma_destroy_cq(void *rdma_cxt,
+ 	DP_VERBOSE(p_hwfn, QED_MSG_RDMA, "icid = %08x\n", in_params->icid);
+ 
+ 	p_ramrod_res =
+-	    (struct rdma_destroy_cq_output_params *)
+ 	    dma_alloc_coherent(&p_hwfn->cdev->pdev->dev,
+ 			       sizeof(struct rdma_destroy_cq_output_params),
+ 			       &ramrod_res_phys, GFP_KERNEL);
+diff -u -p ./drivers/scsi/ibmvscsi/ibmvscsi.c /tmp/nothing/drivers/scsi/ibmvscsi/ibmvscsi.c
+--- ./drivers/scsi/ibmvscsi/ibmvscsi.c
++++ /tmp/nothing/drivers/scsi/ibmvscsi/ibmvscsi.c
+@@ -717,7 +717,6 @@ static int map_sg_data(struct scsi_cmnd
+ 
+ 	/* get indirect table */
+ 	if (!evt_struct->ext_list) {
+-		evt_struct->ext_list = (struct srp_direct_buf *)
+ 			dma_alloc_coherent(dev,
+ 					   SG_ALL * sizeof(struct srp_direct_buf),
+ 					   &evt_struct->ext_list_token, 0);
+diff -u -p ./include/rdma/ib_verbs.h /tmp/nothing/include/rdma/ib_verbs.h
+--- ./include/rdma/ib_verbs.h
++++ /tmp/nothing/include/rdma/ib_verbs.h
+@@ -2272,7 +2272,6 @@ struct iw_cm_conn_param;
+ 				      struct ib_struct)))
+ 
+ #define rdma_zalloc_drv_obj_gfp(ib_dev, ib_type, gfp)                         \
+-	((struct ib_type *)kzalloc(ib_dev->ops.size_##ib_type, gfp))
+ 
+ #define rdma_zalloc_drv_obj(ib_dev, ib_type)                                   \
+ 	rdma_zalloc_drv_obj_gfp(ib_dev, ib_type, GFP_KERNEL)
+diff -u -p ./drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c /tmp/nothing/drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c
+--- ./drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c
++++ /tmp/nothing/drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c
+@@ -890,7 +890,6 @@ static int init_powerplay_table_informat
+ 				power_saving_clock_count);
+ 	}
+ 
+-	pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);
+ 	if (pptable_information->smc_pptable == NULL)
+ 		return -ENOMEM;
+ 
+diff -u -p ./drivers/scsi/esas2r/esas2r_ioctl.c /tmp/nothing/drivers/scsi/esas2r/esas2r_ioctl.c
+--- ./drivers/scsi/esas2r/esas2r_ioctl.c
++++ /tmp/nothing/drivers/scsi/esas2r/esas2r_ioctl.c
+@@ -1548,7 +1548,6 @@ static int allocate_fw_buffers(struct es
+ 
+ 	a->firmware.orig_len = length;
+ 
+-	a->firmware.data = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 						    (size_t)length,
+ 						    (dma_addr_t *)&a->firmware.
+ 						    phys,
+@@ -1895,7 +1894,6 @@ int esas2r_write_vda(struct esas2r_adapt
+ 
+ 	if (!a->vda_buffer) {
+ 		dma_addr_t dma_addr;
+-		a->vda_buffer = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 							 (size_t)
+ 							 VDA_MAX_BUFFER_SIZE,
+ 							 &dma_addr,
+@@ -2064,7 +2062,6 @@ int esas2r_write_fs(struct esas2r_adapte
+ re_allocate_buffer:
+ 			a->fs_api_buffer_size = length;
+ 
+-			a->fs_api_buffer = (u8 *)dma_alloc_coherent(
+ 				&a->pcid->dev,
+ 				(size_t)a->fs_api_buffer_size,
+ 				(dma_addr_t *)&a->ppfs_api_buffer,
+diff -u -p ./drivers/message/fusion/mptbase.c /tmp/nothing/drivers/message/fusion/mptbase.c
+--- ./drivers/message/fusion/mptbase.c
++++ /tmp/nothing/drivers/message/fusion/mptbase.c
+@@ -4975,7 +4975,6 @@ GetLanConfigPages(MPT_ADAPTER *ioc)
+ 
+ 	if (hdr.PageLength > 0) {
+ 		data_sz = hdr.PageLength * 4;
+-		ppage0_alloc = (LANPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);
+ 		rc = -ENOMEM;
+ 		if (ppage0_alloc) {
+ 			memset((u8 *)ppage0_alloc, 0, data_sz);
+@@ -5021,7 +5020,6 @@ GetLanConfigPages(MPT_ADAPTER *ioc)
+ 
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage1_alloc = (LANPage1_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page1_dma);
+ 	if (ppage1_alloc) {
+ 		memset((u8 *)ppage1_alloc, 0, data_sz);
+ 		cfg.physAddr = page1_dma;
+@@ -5322,7 +5320,6 @@ GetIoUnitPage2(MPT_ADAPTER *ioc)
+ 	/* Read the config page */
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage_alloc = (IOUnitPage2_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);
+ 	if (ppage_alloc) {
+ 		memset((u8 *)ppage_alloc, 0, data_sz);
+ 		cfg.physAddr = page_dma;
+diff -u -p ./drivers/net/ethernet/cavium/liquidio/octeon_droq.c /tmp/nothing/drivers/net/ethernet/cavium/liquidio/octeon_droq.c
+--- ./drivers/net/ethernet/cavium/liquidio/octeon_droq.c
++++ /tmp/nothing/drivers/net/ethernet/cavium/liquidio/octeon_droq.c
+@@ -280,11 +280,9 @@ int octeon_init_droq(struct octeon_devic
+ 	dev_dbg(&oct->pci_dev->dev, "droq[%d]: num_desc: %d\n", q_no,
+ 		droq->max_count);
+ 
+-	droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 	      vzalloc_node(array_size(droq->max_count, OCT_DROQ_RECVBUF_SIZE),
+ 			   numa_node);
+ 	if (!droq->recv_buf_list)
+-		droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 		      vzalloc(array_size(droq->max_count,
+ 					 OCT_DROQ_RECVBUF_SIZE));
+ 	if (!droq->recv_buf_list) {
+diff -u -p ./drivers/net/ethernet/sun/sungem.c /tmp/nothing/drivers/net/ethernet/sun/sungem.c
+--- ./drivers/net/ethernet/sun/sungem.c
++++ /tmp/nothing/drivers/net/ethernet/sun/sungem.c
+@@ -2965,7 +2965,6 @@ static int gem_init_one(struct pci_dev *
+ 	/* It is guaranteed that the returned buffer will be at least
+ 	 * PAGE_SIZE aligned.
+ 	 */
+-	gp->init_block = (struct gem_init_block *)
+ 		dma_alloc_coherent(&pdev->dev, sizeof(struct gem_init_block),
+ 				   &gp->gblock_dvma, GFP_KERNEL);
+ 	if (!gp->init_block) {
+diff -u -p ./drivers/nfc/st-nci/se.c /tmp/nothing/drivers/nfc/st-nci/se.c
+--- ./drivers/nfc/st-nci/se.c
++++ /tmp/nothing/drivers/nfc/st-nci/se.c
+@@ -331,7 +331,6 @@ static int st_nci_hci_connectivity_event
+ 		    skb->data[0] != NFC_EVT_TRANSACTION_AID_TAG)
+ 			return -EPROTO;
+ 
+-		transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 					    skb->len - 2, GFP_KERNEL);
+ 		if (!transaction)
+ 			return -ENOMEM;
+diff -u -p ./drivers/crypto/cavium/cpt/cptvf_main.c /tmp/nothing/drivers/crypto/cavium/cpt/cptvf_main.c
+--- ./drivers/crypto/cavium/cpt/cptvf_main.c
++++ /tmp/nothing/drivers/crypto/cavium/cpt/cptvf_main.c
+@@ -233,7 +233,6 @@ static int alloc_command_queues(struct c
+ 
+ 			c_size = (rem_q_size > qcsize_bytes) ? qcsize_bytes :
+ 					rem_q_size;
+-			curr->head = (u8 *)dma_alloc_coherent(&pdev->dev,
+ 							      c_size + CPT_NEXT_CHUNK_PTR_SIZE,
+ 							      &curr->dma_addr,
+ 							      GFP_KERNEL);
+diff -u -p ./drivers/message/fusion/mptfc.c /tmp/nothing/drivers/message/fusion/mptfc.c
+--- ./drivers/message/fusion/mptfc.c
++++ /tmp/nothing/drivers/message/fusion/mptfc.c
+@@ -763,7 +763,6 @@ mptfc_GetFcPortPage0(MPT_ADAPTER *ioc, i
+ 
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage0_alloc = (FCPortPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);
+ 	if (ppage0_alloc) {
+ 
+  try_again:
+@@ -904,7 +903,6 @@ start_over:
+ 		if (data_sz < sizeof(FCPortPage1_t))
+ 			data_sz = sizeof(FCPortPage1_t);
+ 
+-		page1_alloc = (FCPortPage1_t *) pci_alloc_consistent(ioc->pcidev,
+ 						data_sz,
+ 						&page1_dma);
+ 		if (!page1_alloc)
+diff -u -p ./drivers/scsi/fnic/fnic_debugfs.c /tmp/nothing/drivers/scsi/fnic/fnic_debugfs.c
+--- ./drivers/scsi/fnic/fnic_debugfs.c
++++ /tmp/nothing/drivers/scsi/fnic/fnic_debugfs.c
+@@ -58,7 +58,6 @@ int fnic_debugfs_init(void)
+ 						fnic_trace_debugfs_root);
+ 
+ 	/* Allocate memory to structure */
+-	fc_trc_flag = (struct fc_trace_flag_type *)
+ 		vmalloc(sizeof(struct fc_trace_flag_type));
+ 
+ 	if (fc_trc_flag) {
+./drivers/scsi/pmcraid.c:4709:3-21: WARNING: dma_alloc_coherent use in pinstance -> hrrq_start [ i ] already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:244:11-29: WARNING: dma_alloc_coherent use in mvi -> tx already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:250:15-33: WARNING: dma_alloc_coherent use in mvi -> rx_fis already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:256:11-29: WARNING: dma_alloc_coherent use in mvi -> rx already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:265:13-31: WARNING: dma_alloc_coherent use in mvi -> slot already zeroes out memory,  so memset is not needed
+./drivers/scsi/qla2xxx/qla_mbx.c:4920:15-33: WARNING: dma_alloc_coherent use in els_cmd_map already zeroes out memory,  so memset is not needed
+./drivers/scsi/mpt3sas/mpt3sas_base.c:5247:16-34: WARNING: dma_alloc_coherent use in ioc -> request already zeroes out memory,  so memset is not needed
+diff -u -p ./drivers/scsi/pmcraid.c /tmp/nothing/drivers/scsi/pmcraid.c
+--- ./drivers/scsi/pmcraid.c
++++ /tmp/nothing/drivers/scsi/pmcraid.c
+@@ -4705,10 +4705,6 @@ static int pmcraid_allocate_host_rrqs(st
+ 	buffer_size = HRRQ_ENTRY_SIZE * PMCRAID_MAX_CMD;
+ 
+ 	for (i = 0; i < pinstance->num_hrrq; i++) {
+-		pinstance->hrrq_start[i] =
+-			dma_alloc_coherent(&pinstance->pdev->dev, buffer_size,
+-					   &pinstance->hrrq_start_bus_addr[i],
+-					   GFP_KERNEL);
+ 		if (!pinstance->hrrq_start[i]) {
+ 			pmcraid_err("pci_alloc failed for hrrq vector : %d\n",
+ 				    i);
+@@ -4716,7 +4712,6 @@ static int pmcraid_allocate_host_rrqs(st
+ 			return -ENOMEM;
+ 		}
+ 
+-		memset(pinstance->hrrq_start[i], 0, buffer_size);
+ 		pinstance->hrrq_curr[i] = pinstance->hrrq_start[i];
+ 		pinstance->hrrq_end[i] =
+ 			pinstance->hrrq_start[i] + PMCRAID_MAX_CMD - 1;
+diff -u -p ./drivers/scsi/mpt3sas/mpt3sas_base.c /tmp/nothing/drivers/scsi/mpt3sas/mpt3sas_base.c
+--- ./drivers/scsi/mpt3sas/mpt3sas_base.c
++++ /tmp/nothing/drivers/scsi/mpt3sas/mpt3sas_base.c
+@@ -5244,8 +5244,6 @@ _base_allocate_memory_pools(struct MPT3S
+ 	sz += (ioc->internal_depth * ioc->request_sz);
+ 
+ 	ioc->request_dma_sz = sz;
+-	ioc->request = dma_alloc_coherent(&ioc->pdev->dev, sz,
+-			&ioc->request_dma, GFP_KERNEL);
+ 	if (!ioc->request) {
+ 		ioc_err(ioc, "request pool: dma_alloc_coherent failed: hba_depth(%d), chains_per_io(%d), frame_sz(%d), total(%d kB)\n",
+ 			ioc->hba_queue_depth, ioc->chains_needed_per_io,
+@@ -5257,7 +5255,6 @@ _base_allocate_memory_pools(struct MPT3S
+ 		_base_release_memory_pools(ioc);
+ 		goto retry_allocation;
+ 	}
+-	memset(ioc->request, 0, sz);
+ 
+ 	if (retry_sz)
+ 		ioc_err(ioc, "request pool: dma_alloc_coherent succeed: hba_depth(%d), chains_per_io(%d), frame_sz(%d), total(%d kb)\n",
+diff -u -p ./drivers/scsi/mvsas/mv_init.c /tmp/nothing/drivers/scsi/mvsas/mv_init.c
+--- ./drivers/scsi/mvsas/mv_init.c
++++ /tmp/nothing/drivers/scsi/mvsas/mv_init.c
+@@ -241,33 +241,18 @@ static int mvs_alloc(struct mvs_info *mv
+ 	/*
+ 	 * alloc and init our DMA areas
+ 	 */
+-	mvi->tx = dma_alloc_coherent(mvi->dev,
+-				     sizeof(*mvi->tx) * MVS_CHIP_SLOT_SZ,
+-				     &mvi->tx_dma, GFP_KERNEL);
+ 	if (!mvi->tx)
+ 		goto err_out;
+-	memset(mvi->tx, 0, sizeof(*mvi->tx) * MVS_CHIP_SLOT_SZ);
+-	mvi->rx_fis = dma_alloc_coherent(mvi->dev, MVS_RX_FISL_SZ,
+-					 &mvi->rx_fis_dma, GFP_KERNEL);
+ 	if (!mvi->rx_fis)
+ 		goto err_out;
+-	memset(mvi->rx_fis, 0, MVS_RX_FISL_SZ);
+ 
+-	mvi->rx = dma_alloc_coherent(mvi->dev,
+-				     sizeof(*mvi->rx) * (MVS_RX_RING_SZ + 1),
+-				     &mvi->rx_dma, GFP_KERNEL);
+ 	if (!mvi->rx)
+ 		goto err_out;
+-	memset(mvi->rx, 0, sizeof(*mvi->rx) * (MVS_RX_RING_SZ + 1));
+ 	mvi->rx[0] = cpu_to_le32(0xfff);
+ 	mvi->rx_cons = 0xfff;
+ 
+-	mvi->slot = dma_alloc_coherent(mvi->dev,
+-				       sizeof(*mvi->slot) * slot_nr,
+-				       &mvi->slot_dma, GFP_KERNEL);
+ 	if (!mvi->slot)
+ 		goto err_out;
+-	memset(mvi->slot, 0, sizeof(*mvi->slot) * slot_nr);
+ 
+ 	mvi->bulk_buffer = dma_alloc_coherent(mvi->dev,
+ 				       TRASH_BUCKET_SIZE,
+diff -u -p ./drivers/scsi/qla2xxx/qla_mbx.c /tmp/nothing/drivers/scsi/qla2xxx/qla_mbx.c
+--- ./drivers/scsi/qla2xxx/qla_mbx.c
++++ /tmp/nothing/drivers/scsi/qla2xxx/qla_mbx.c
+@@ -4917,15 +4917,12 @@ qla25xx_set_els_cmds_supported(scsi_qla_
+ 	ql_dbg(ql_dbg_mbx + ql_dbg_verbose, vha, 0x1197,
+ 	    "Entered %s.\n", __func__);
+ 
+-	els_cmd_map = dma_alloc_coherent(&ha->pdev->dev, ELS_CMD_MAP_SIZE,
+-	    &els_cmd_map_dma, GFP_KERNEL);
+ 	if (!els_cmd_map) {
+ 		ql_log(ql_log_warn, vha, 0x7101,
+ 		    "Failed to allocate RDP els command param.\n");
+ 		return QLA_MEMORY_ALLOC_FAILED;
+ 	}
+ 
+-	memset(els_cmd_map, 0, ELS_CMD_MAP_SIZE);
+ 
+ 	/* List of Purex ELS */
+ 	cmd_opcode[0] = ELS_FPIN;
+./drivers/bus/mhi/core/pm.c:894:57-58: atomic_add_unless
+./drivers/md/md.c:587:5-24: atomic_dec_and_test variation before object free at line 589.
+./drivers/md/md.c:703:6-25: atomic_dec_and_test variation before object free at line 709.
+./drivers/md/md.c:627:5-24: atomic_dec_and_test variation before object free at line 628.
+./fs/btrfs/extent_io.c:5353:5-24: atomic_dec_and_test variation before object free at line 5360.
+./fs/btrfs/extent_io.c:5353:5-24: atomic_dec_and_test variation before object free at line 5367.
+./fs/xfs/xfs_buf.c:1021:6-25: atomic_dec_and_test variation before object free at line 1023.
+./fs/xfs/xfs_buf.c:1041:11-30: atomic_dec_and_test variation before object free at line 1075.
+./fs/xfs/xfs_buf.c:1041:11-30: atomic_dec_and_test variation before object free at line 1092.
+./net/rxrpc/call_accept.c:223:6-25: atomic_dec_and_test variation before object free at line 219.
+./net/unix/scm.c:80:6-30: atomic_dec_and_test variation before object free at line 81.
+./arch/powerpc/mm/book3s64/pgtable.c:349:5-24: atomic_dec_and_test variation before object free at line 351.
+./block/bio.c:657:6-25: atomic_dec_and_test variation before object free at line 658.
+./drivers/gpu/drm/i915/i915_sw_fence.c:192:6-25: atomic_dec_and_test variation before object free at line 204.
+./drivers/infiniband/core/iwcm.c:215:5-24: atomic_dec_and_test variation before object free at line 217.
+./drivers/infiniband/hw/mlx4/mcg.c:444:5-24: atomic_dec_and_test variation before object free at line 457.
+./drivers/infiniband/hw/mlx4/mcg.c:444:5-24: atomic_dec_and_test variation before object free at line 462.
+./drivers/tty/serial/zs.c:820:13-30: x = atomic_add_return(-1, ...)
+./fs/btrfs/inode.c:2879:45-46: atomic_add_unless
+./fs/xfs/xfs_extfree_item.c:61:5-24: atomic_dec_and_test variation before object free at line 62.
+./kernel/events/core.c:4903:6-30: atomic_dec_and_test variation before object free at line 4906.
+./net/netfilter/ipvs/ip_vs_ctl.c:487:5-24: atomic_dec_and_test variation before object free at line 493.
+./net/netfilter/ipvs/ip_vs_ctl.c:487:5-24: atomic_dec_and_test variation before object free at line 495.
+./block/blk-ioc.c:156:5-29: atomic_dec_and_test variation before object free at line 159.
+./drivers/gpu/drm/i915/gt/intel_gt_requests.c:186:6-25: atomic_dec_and_test variation before object free at line 187.
+./drivers/gpu/drm/i915/i915_vma.c:836:47-48: atomic_add_unless
+./drivers/infiniband/hw/hns/hns_roce_qp.c:994:5-24: atomic_dec_and_test variation before object free at line 1001.
+./drivers/tty/serial/dz.c:668:13-30: x = atomic_add_return(-1, ...)
+./drivers/tty/serial/dz.c:703:14-31: x = atomic_add_return(-1, ...)
+./drivers/tty/serial/dz.c:451:13-30: x = atomic_add_return(-1, ...)
+./drivers/usb/gadget/function/f_fs.c:1715:5-24: atomic_dec_and_test variation before object free at line 1719.
+./fs/btrfs/reada.c:186:6-25: atomic_dec_and_test variation before object free at line 181.
+./fs/fscache/cache.c:74:6-25: atomic_dec_and_test variation before object free at line 75.
+./fs/fscache/cache.c:74:6-25: atomic_dec_and_test variation before object free at line 81.
+./fs/iomap/direct-io.c:160:5-24: atomic_dec_and_test variation before object free at line 169.
+./fs/kernfs/dir.c:511:13-32: atomic_dec_and_test variation before object free at line 545.
+./fs/kernfs/dir.c:541:6-25: atomic_dec_and_test variation before object free at line 545.
+./fs/xfs/xfs_bmap_item.c:57:5-24: atomic_dec_and_test variation before object free at line 58.
+./fs/xfs/xfs_buf_item.c:543:6-25: atomic_dec_and_test variation before object free at line 565.
+./fs/xfs/xfs_buf_item.c:426:9-28: atomic_dec_and_test variation before object free at line 449.
+./fs/xfs/xfs_buf_item.c:426:9-28: atomic_dec_and_test variation before object free at line 469.
+./fs/xfs/xfs_buf_item.c:428:5-24: atomic_dec_and_test variation before object free at line 449.
+./fs/xfs/xfs_buf_item.c:428:5-24: atomic_dec_and_test variation before object free at line 469.
+./fs/xfs/xfs_rmap_item.c:56:5-24: atomic_dec_and_test variation before object free at line 57.
+./include/linux/mbcache.h:36:6-25: atomic_dec_and_test variation before object free at line 38.
+./include/linux/netfilter/nf_conntrack_common.h:33:13-32: atomic_dec_and_test variation before object free at line 34.
+./include/linux/nsproxy.h:104:5-24: atomic_dec_and_test variation before object free at line 105.
+./include/net/bluetooth/hci_core.h:1116:5-24: atomic_dec_and_test variation before object free at line 1122.
+./include/net/bluetooth/hci_core.h:1116:5-24: atomic_dec_and_test variation before object free at line 1141.
+./kernel/bpf/cpumap.c:220:5-24: atomic_dec_and_test variation before object free at line 227.
+./kernel/cgroup/cgroup.c:5405:5-24: atomic_dec_and_test variation before object free at line 5407.
+./arch/x86/kernel/cpu/resctrl/rdtgroup.c:528:5-24: atomic_dec_and_test variation before object free at line 532.
+./arch/x86/kernel/cpu/resctrl/rdtgroup.c:2015:5-24: atomic_dec_and_test variation before object free at line 2022.
+./drivers/scsi/bnx2i/bnx2i_iscsi.c:1499:10-29: atomic_dec_and_test variation before object free at line 1497.
+./fs/btrfs/disk-io.c:602:14-33: atomic_dec_and_test variation before object free at line 685.
+./fs/ext4/mballoc.c:3862:6-25: atomic_dec_and_test variation before object free at line 3872.
+./fs/kernfs/file.c:605:5-24: atomic_dec_and_test variation before object free at line 613.
+./include/linux/cred.h:52:5-24: atomic_dec_and_test variation before object free at line 53.
+./sound/core/seq/seq_ports.c:231:7-26: atomic_dec_and_test variation before object free at line 224.
+./sound/core/seq/seq_ports.c:231:7-26: atomic_dec_and_test variation before object free at line 232.
+./sound/i2c/other/ak4113.c:622:5-24: atomic_dec_and_test variation before object free at line 623.
+./sound/i2c/other/ak4113.c:134:5-24: atomic_dec_and_test variation before object free at line 135.
+./drivers/gpu/drm/i915/intel_wakeref.c:89:40-41: atomic_add_unless
+./drivers/infiniband/core/multicast.c:191:5-24: atomic_dec_and_test variation before object free at line 194.
+./drivers/md/dm.c:367:5-24: atomic_dec_and_test variation before object free at line 369.
+./drivers/net/ethernet/chelsio/cxgb4/l2t.c:388:5-24: atomic_dec_and_test variation before object free at line 389.
+./drivers/scsi/libfc/fc_exch.c:316:5-24: atomic_dec_and_test variation before object free at line 321.
+./drivers/scsi/qla2xxx/qla_os.c:7249:6-25: atomic_dec_and_test variation before object free at line 7285.
+./include/net/lwtunnel.h:70:5-24: atomic_dec_and_test variation before object free at line 71.
+./kernel/fork.c:700:14-33: atomic_dec_and_test variation before object free at line 702.
+./kernel/fork.c:1113:5-24: atomic_dec_and_test variation before object free at line 1115.
+./kernel/nsproxy.c:253:11-30: atomic_dec_and_test variation before object free at line 254.
+./kernel/signal.c:440:6-25: atomic_dec_and_test variation before object free at line 441.
+./mm/rmap.c:1810:25-44: atomic_dec_and_test variation before object free at line 1811.
+./net/batman-adv/bridge_loop_avoidance.c:1497:8-27: atomic_dec_and_test variation before object free at line 1509.
+./drivers/gpu/drm/i915/i915_active.c:179:41-42: atomic_add_unless
+./drivers/gpu/drm/i915/i915_active.c:169:41-42: atomic_add_unless
+./drivers/md/raid5.c:392:40-41: atomic_add_unless
+./fs/ceph/inode.c:1810:46-47: atomic_add_unless
+./fs/configfs/dir.c:168:13-32: atomic_dec_and_test variation before object free at line 169.
+./fs/xfs/xfs_refcount_item.c:56:5-24: atomic_dec_and_test variation before object free at line 57.
+./kernel/user_namespace.c:200:10-29: atomic_dec_and_test variation before object free at line 195.
+./arch/powerpc/mm/book3s64/iommu_api.c:457:40-41: atomic_add_unless
+./drivers/gpu/drm/i915/gt/intel_ppgtt.c:109:39-40: atomic_add_unless
+./drivers/gpu/drm/i915/gt/intel_timeline.c:404:5-24: atomic_dec_and_test variation before object free at line 405.
+./drivers/gpu/drm/i915/gt/intel_timeline.c:400:47-48: atomic_add_unless
+./drivers/infiniband/core/uverbs_cmd.c:674:15-34: atomic_dec_and_test variation before object free at line 685.
+./drivers/md/dm-integrity.c:1456:5-24: atomic_dec_and_test variation before object free at line 1473.
+./drivers/media/usb/s2255/s2255drv.c:2363:5-24: atomic_dec_and_test variation before object free at line 2364.
+./drivers/media/usb/s2255/s2255drv.c:1559:5-24: atomic_dec_and_test variation before object free at line 1560.
+./drivers/net/ethernet/chelsio/cxgb4/cxgb4_uld.c:453:17-36: atomic_dec_and_test variation before object free at line 456.
+./drivers/net/ethernet/sun/niu.c:9555:5-24: atomic_dec_and_test variation before object free at line 9556.
+./fs/btrfs/scrub.c:1945:5-24: atomic_dec_and_test variation before object free at line 1948.
+./fs/ceph/snap.c:203:5-24: atomic_dec_and_test variation before object free at line 204.
+./fs/ceph/snap.c:215:6-25: atomic_dec_and_test variation before object free at line 219.
+./fs/ceph/snap.c:1092:5-24: atomic_dec_and_test variation before object free at line 1101.
+./fs/cifs/connect.c:3622:6-25: atomic_dec_and_test variation before object free at line 3630.
+./fs/hfsplus/bnode.c:632:7-26: atomic_dec_and_test variation before object free at line 645.
+./fs/jffs2/xattr.c:624:6-25: atomic_dec_and_test variation before object free at line 626.
+./fs/jffs2/xattr.c:407:5-24: atomic_dec_and_test variation before object free at line 412.
+./fs/nfsd/nfs4state.c:1318:6-25: atomic_dec_and_test variation before object free at line 1322.
+./fs/nfsd/nfs4state.c:222:5-24: atomic_dec_and_test variation before object free at line 223.
+./mm/kmemleak.c:491:6-25: atomic_dec_and_test variation before object free at line 503.
+./mm/shmem.c:1346:6-25: atomic_dec_and_test variation before object free at line 1326.
+./mm/shmem.c:1346:6-25: atomic_dec_and_test variation before object free at line 1345.
+./net/netfilter/ipset/ip_set_hash_gen.h:1035:5-24: atomic_dec_and_test variation before object free at line 1037.
+./net/netfilter/ipset/ip_set_hash_gen.h:1148:5-24: atomic_dec_and_test variation before object free at line 1150.
+./net/netfilter/ipset/ip_set_hash_gen.h:614:5-24: atomic_dec_and_test variation before object free at line 616.
+./net/netfilter/ipset/ip_set_hash_gen.h:614:5-24: atomic_dec_and_test variation before object free at line 619.
+./net/netfilter/ipset/ip_set_hash_gen.h:801:5-24: atomic_dec_and_test variation before object free at line 803.
+./net/netfilter/ipset/ip_set_hash_gen.h:1336:6-25: atomic_dec_and_test variation before object free at line 1339.
+./sound/i2c/other/ak4114.c:607:5-24: atomic_dec_and_test variation before object free at line 608.
+./sound/i2c/other/ak4114.c:149:5-24: atomic_dec_and_test variation before object free at line 150.
+./arch/powerpc/mm/pgtable-frag.c:117:5-24: atomic_dec_and_test variation before object free at line 120.
+./drivers/block/xen-blkback/common.h:368:6-25: atomic_dec_and_test variation before object free at line 369.
+./drivers/md/raid5-cache.c:2837:6-25: atomic_dec_and_test variation before object free at line 2844.
+./drivers/net/ethernet/jme.c:1275:9-28: atomic_dec_and_test variation before object free at line 1299.
+./drivers/net/ethernet/jme.c:1275:9-28: atomic_dec_and_test variation before object free at line 1338.
+./fs/ceph/file.c:1009:6-25: atomic_dec_and_test variation before object free at line 1046.
+./fs/coda/file.c:116:5-24: atomic_dec_and_test variation before object free at line 119.
+./fs/fscache/operation.c:504:6-25: atomic_dec_and_test variation before object free at line 540.
+./fs/fscache/operation.c:504:6-25: atomic_dec_and_test variation before object free at line 553.
+./fs/hfs/bnode.c:464:7-26: atomic_dec_and_test variation before object free at line 475.
+./fs/namespace.c:3838:6-25: atomic_dec_and_test variation before object free at line 3841.
+./fs/super.c:332:5-24: atomic_dec_and_test variation before object free at line 342.
+./fs/super.c:364:43-44: atomic_add_unless
+./fs/xfs/xfs_log.c:2914:49-50: atomic_add_unless
+./kernel/acct.c:135:5-29: atomic_dec_and_test variation before object free at line 136.
+./kernel/audit_tree.c:141:5-29: atomic_dec_and_test variation before object free at line 142.
+./kernel/bpf/syscall.c:481:5-26: atomic_dec_and_test variation before object free at line 483.
+./kernel/bpf/syscall.c:2335:6-27: atomic_dec_and_test variation before object free at line 2340.
+./kernel/bpf/syscall.c:2335:6-27: atomic_dec_and_test variation before object free at line 2342.
+./kernel/sched/topology.c:570:6-25: atomic_dec_and_test variation before object free at line 571.
+./kernel/sched/topology.c:458:7-26: atomic_dec_and_test variation before object free at line 472.
+./kernel/sched/topology.c:482:6-25: atomic_dec_and_test variation before object free at line 485.
+coccicheck failed
+Makefile:1842: recipe for target 'coccicheck' failed
+make: *** [coccicheck] Error 255
