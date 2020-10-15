@@ -1,0 +1,1697 @@
+You have not explicitly specified the mode to use. Using default "report" mode.
+Available modes are the following: patch, report, context, org
+You can specify the mode with "make coccicheck MODE=<mode>"
+Note however that some modes are not implemented by some semantic patches.
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c:893:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.
+./drivers/net/ethernet/sun/sungem.c:2968:19-40: WARNING: casting value returned by memory allocation function to (struct gem_init_block *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c:255:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.
+./drivers/message/fusion/mptctl.c:2596:14-31: WARNING: casting value returned by memory allocation function to (SCSIDevicePage0_t *) is useless.
+./drivers/message/fusion/mptctl.c:2660:15-32: WARNING: casting value returned by memory allocation function to (SCSIDevicePage3_t *) is useless.
+./drivers/nfc/st21nfca/se.c:318:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:1551:21-23: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:2067:23-25: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/scsi/esas2r/esas2r_ioctl.c:1898:19-21: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/net/ethernet/qlogic/qed/qed_rdma.c:1154:6-42: WARNING: casting value returned by memory allocation function to (struct rdma_destroy_cq_output_params *) is useless.
+./drivers/scsi/ibmvscsi/ibmvscsi.c:720:26-47: WARNING: casting value returned by memory allocation function to (struct srp_direct_buf *) is useless.
+./drivers/crypto/cavium/cpt/cptvf_main.c:236:17-19: WARNING: casting value returned by memory allocation function to (u8 *) is useless.
+./drivers/message/fusion/mptbase.c:5325:16-29: WARNING: casting value returned by memory allocation function to (IOUnitPage2_t *) is useless.
+./drivers/message/fusion/mptbase.c:4978:18-28: WARNING: casting value returned by memory allocation function to (LANPage0_t *) is useless.
+./drivers/message/fusion/mptbase.c:5024:17-27: WARNING: casting value returned by memory allocation function to (LANPage1_t *) is useless.
+./drivers/nfc/st-nci/se.c:334:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.
+./drivers/scsi/fnic/fnic_debugfs.c:61:16-41: WARNING: casting value returned by memory allocation function to (struct fc_trace_flag_type *) is useless.
+./drivers/message/fusion/mptfc.c:766:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage0_t *) is useless.
+./drivers/message/fusion/mptfc.c:907:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage1_t *) is useless.
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:283:24-49: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:287:25-50: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.
+./include/rdma/ib_verbs.h:2275:3-17: WARNING: casting value returned by memory allocation function to (struct ib_type *) is useless.
+./drivers/scsi/mvsas/mv_init.c:244:11-29: WARNING: dma_alloc_coherent use in mvi -> tx already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:250:15-33: WARNING: dma_alloc_coherent use in mvi -> rx_fis already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:256:11-29: WARNING: dma_alloc_coherent use in mvi -> rx already zeroes out memory,  so memset is not needed
+./drivers/scsi/mvsas/mv_init.c:265:13-31: WARNING: dma_alloc_coherent use in mvi -> slot already zeroes out memory,  so memset is not needed
+./drivers/scsi/mpt3sas/mpt3sas_base.c:5247:16-34: WARNING: dma_alloc_coherent use in ioc -> request already zeroes out memory,  so memset is not needed
+./drivers/scsi/qla2xxx/qla_mbx.c:4920:15-33: WARNING: dma_alloc_coherent use in els_cmd_map already zeroes out memory,  so memset is not needed
+./drivers/scsi/pmcraid.c:4709:3-21: WARNING: dma_alloc_coherent use in pinstance -> hrrq_start [ i ] already zeroes out memory,  so memset is not needed
+./block/blk-ioc.c:156:5-29: atomic_dec_and_test variation before object free at line 159.
+./drivers/gpu/drm/i915/gt/intel_ppgtt.c:109:39-40: atomic_add_unless
+./drivers/gpu/drm/i915/i915_active.c:179:41-42: atomic_add_unless
+./drivers/gpu/drm/i915/i915_active.c:169:41-42: atomic_add_unless
+./drivers/infiniband/core/uverbs_cmd.c:674:15-34: atomic_dec_and_test variation before object free at line 685.
+./drivers/md/md.c:587:5-24: atomic_dec_and_test variation before object free at line 589.
+./drivers/md/md.c:703:6-25: atomic_dec_and_test variation before object free at line 709.
+./drivers/md/md.c:627:5-24: atomic_dec_and_test variation before object free at line 628.
+./drivers/scsi/bnx2i/bnx2i_iscsi.c:1499:10-29: atomic_dec_and_test variation before object free at line 1497.
+./fs/btrfs/extent_io.c:5353:5-24: atomic_dec_and_test variation before object free at line 5360.
+./fs/btrfs/extent_io.c:5353:5-24: atomic_dec_and_test variation before object free at line 5367.
+./fs/cifs/connect.c:3622:6-25: atomic_dec_and_test variation before object free at line 3630.
+./fs/xfs/xfs_refcount_item.c:56:5-24: atomic_dec_and_test variation before object free at line 57.
+./include/net/bluetooth/hci_core.h:1116:5-24: atomic_dec_and_test variation before object free at line 1122.
+./include/net/bluetooth/hci_core.h:1116:5-24: atomic_dec_and_test variation before object free at line 1141.
+./kernel/fork.c:700:14-33: atomic_dec_and_test variation before object free at line 702.
+./kernel/fork.c:1113:5-24: atomic_dec_and_test variation before object free at line 1115.
+./net/rxrpc/call_accept.c:223:6-25: atomic_dec_and_test variation before object free at line 219.
+./drivers/bus/mhi/core/pm.c:894:57-58: atomic_add_unless
+./drivers/gpu/drm/i915/i915_vma.c:836:47-48: atomic_add_unless
+./drivers/infiniband/hw/mlx4/mcg.c:444:5-24: atomic_dec_and_test variation before object free at line 457.
+./drivers/infiniband/hw/mlx4/mcg.c:444:5-24: atomic_dec_and_test variation before object free at line 462.
+./drivers/md/raid5.c:392:40-41: atomic_add_unless
+./drivers/scsi/libfc/fc_exch.c:316:5-24: atomic_dec_and_test variation before object free at line 321.
+./fs/btrfs/disk-io.c:602:14-33: atomic_dec_and_test variation before object free at line 685.
+./fs/ceph/inode.c:1810:46-47: atomic_add_unless
+./fs/coda/file.c:116:5-24: atomic_dec_and_test variation before object free at line 119.
+./fs/configfs/dir.c:168:13-32: atomic_dec_and_test variation before object free at line 169.
+./fs/hfs/bnode.c:464:7-26: atomic_dec_and_test variation before object free at line 475.
+./fs/xfs/xfs_extfree_item.c:61:5-24: atomic_dec_and_test variation before object free at line 62.
+./fs/xfs/xfs_rmap_item.c:56:5-24: atomic_dec_and_test variation before object free at line 57.
+./net/batman-adv/bridge_loop_avoidance.c:1497:8-27: atomic_dec_and_test variation before object free at line 1509.
+./drivers/gpu/drm/i915/intel_wakeref.c:89:40-41: atomic_add_unless
+./drivers/infiniband/core/multicast.c:191:5-24: atomic_dec_and_test variation before object free at line 194.
+./drivers/tty/serial/dz.c:668:13-30: x = atomic_add_return(-1, ...)
+./drivers/tty/serial/dz.c:703:14-31: x = atomic_add_return(-1, ...)
+./drivers/tty/serial/dz.c:451:13-30: x = atomic_add_return(-1, ...)
+./drivers/tty/serial/zs.c:820:13-30: x = atomic_add_return(-1, ...)
+./fs/ceph/file.c:1009:6-25: atomic_dec_and_test variation before object free at line 1046.
+./fs/ceph/snap.c:203:5-24: atomic_dec_and_test variation before object free at line 204.
+./fs/ceph/snap.c:215:6-25: atomic_dec_and_test variation before object free at line 219.
+./fs/ceph/snap.c:1092:5-24: atomic_dec_and_test variation before object free at line 1101.
+./fs/ext4/mballoc.c:3862:6-25: atomic_dec_and_test variation before object free at line 3872.
+./fs/namespace.c:3838:6-25: atomic_dec_and_test variation before object free at line 3841.
+./fs/xfs/xfs_buf.c:1021:6-25: atomic_dec_and_test variation before object free at line 1023.
+./fs/xfs/xfs_buf.c:1041:11-30: atomic_dec_and_test variation before object free at line 1075.
+./fs/xfs/xfs_buf.c:1041:11-30: atomic_dec_and_test variation before object free at line 1092.
+./kernel/nsproxy.c:253:11-30: atomic_dec_and_test variation before object free at line 254.
+./kernel/signal.c:440:6-25: atomic_dec_and_test variation before object free at line 441.
+./mm/rmap.c:1810:25-44: atomic_dec_and_test variation before object free at line 1811.
+./net/netfilter/ipvs/ip_vs_ctl.c:487:5-24: atomic_dec_and_test variation before object free at line 493.
+./net/netfilter/ipvs/ip_vs_ctl.c:487:5-24: atomic_dec_and_test variation before object free at line 495.
+./sound/i2c/other/ak4113.c:622:5-24: atomic_dec_and_test variation before object free at line 623.
+./sound/i2c/other/ak4113.c:134:5-24: atomic_dec_and_test variation before object free at line 135.
+./arch/powerpc/mm/book3s64/pgtable.c:349:5-24: atomic_dec_and_test variation before object free at line 351.
+./drivers/gpu/drm/i915/i915_sw_fence.c:192:6-25: atomic_dec_and_test variation before object free at line 204.
+./drivers/md/dm.c:367:5-24: atomic_dec_and_test variation before object free at line 369.
+./fs/btrfs/reada.c:186:6-25: atomic_dec_and_test variation before object free at line 181.
+./fs/fscache/operation.c:504:6-25: atomic_dec_and_test variation before object free at line 540.
+./fs/fscache/operation.c:504:6-25: atomic_dec_and_test variation before object free at line 553.
+./fs/jffs2/xattr.c:624:6-25: atomic_dec_and_test variation before object free at line 626.
+./fs/jffs2/xattr.c:407:5-24: atomic_dec_and_test variation before object free at line 412.
+./include/linux/mbcache.h:36:6-25: atomic_dec_and_test variation before object free at line 38.
+./kernel/bpf/syscall.c:481:5-26: atomic_dec_and_test variation before object free at line 483.
+./kernel/bpf/syscall.c:2335:6-27: atomic_dec_and_test variation before object free at line 2340.
+./kernel/bpf/syscall.c:2335:6-27: atomic_dec_and_test variation before object free at line 2342.
+./net/netfilter/ipset/ip_set_hash_gen.h:1035:5-24: atomic_dec_and_test variation before object free at line 1037.
+./net/netfilter/ipset/ip_set_hash_gen.h:1148:5-24: atomic_dec_and_test variation before object free at line 1150.
+./net/netfilter/ipset/ip_set_hash_gen.h:614:5-24: atomic_dec_and_test variation before object free at line 616.
+./net/netfilter/ipset/ip_set_hash_gen.h:614:5-24: atomic_dec_and_test variation before object free at line 619.
+./net/netfilter/ipset/ip_set_hash_gen.h:801:5-24: atomic_dec_and_test variation before object free at line 803.
+./net/netfilter/ipset/ip_set_hash_gen.h:1336:6-25: atomic_dec_and_test variation before object free at line 1339.
+./net/unix/scm.c:80:6-30: atomic_dec_and_test variation before object free at line 81.
+./sound/core/seq/seq_ports.c:231:7-26: atomic_dec_and_test variation before object free at line 224.
+./sound/core/seq/seq_ports.c:231:7-26: atomic_dec_and_test variation before object free at line 232.
+./arch/powerpc/mm/pgtable-frag.c:117:5-24: atomic_dec_and_test variation before object free at line 120.
+./drivers/block/xen-blkback/common.h:368:6-25: atomic_dec_and_test variation before object free at line 369.
+./drivers/gpu/drm/i915/gt/intel_gt_requests.c:186:6-25: atomic_dec_and_test variation before object free at line 187.
+./drivers/md/raid5-cache.c:2837:6-25: atomic_dec_and_test variation before object free at line 2844.
+./drivers/media/usb/s2255/s2255drv.c:2363:5-24: atomic_dec_and_test variation before object free at line 2364.
+./drivers/media/usb/s2255/s2255drv.c:1559:5-24: atomic_dec_and_test variation before object free at line 1560.
+./drivers/scsi/qla2xxx/qla_os.c:7249:6-25: atomic_dec_and_test variation before object free at line 7285.
+./drivers/usb/gadget/function/f_fs.c:1715:5-24: atomic_dec_and_test variation before object free at line 1719.
+./fs/btrfs/scrub.c:1945:5-24: atomic_dec_and_test variation before object free at line 1948.
+./fs/iomap/direct-io.c:160:5-24: atomic_dec_and_test variation before object free at line 169.
+./fs/kernfs/file.c:605:5-24: atomic_dec_and_test variation before object free at line 613.
+./fs/super.c:332:5-24: atomic_dec_and_test variation before object free at line 342.
+./fs/super.c:364:43-44: atomic_add_unless
+./fs/xfs/xfs_log.c:2914:49-50: atomic_add_unless
+./kernel/events/core.c:4903:6-30: atomic_dec_and_test variation before object free at line 4906.
+./arch/x86/kernel/cpu/resctrl/rdtgroup.c:528:5-24: atomic_dec_and_test variation before object free at line 532.
+./arch/x86/kernel/cpu/resctrl/rdtgroup.c:2015:5-24: atomic_dec_and_test variation before object free at line 2022.
+./fs/xfs/xfs_bmap_item.c:57:5-24: atomic_dec_and_test variation before object free at line 58.
+./fs/xfs/xfs_buf_item.c:543:6-25: atomic_dec_and_test variation before object free at line 565.
+./fs/xfs/xfs_buf_item.c:426:9-28: atomic_dec_and_test variation before object free at line 449.
+./fs/xfs/xfs_buf_item.c:426:9-28: atomic_dec_and_test variation before object free at line 469.
+./fs/xfs/xfs_buf_item.c:428:5-24: atomic_dec_and_test variation before object free at line 449.
+./fs/xfs/xfs_buf_item.c:428:5-24: atomic_dec_and_test variation before object free at line 469.
+./include/linux/cred.h:52:5-24: atomic_dec_and_test variation before object free at line 53.
+./include/linux/netfilter/nf_conntrack_common.h:33:13-32: atomic_dec_and_test variation before object free at line 34.
+./sound/i2c/other/ak4114.c:607:5-24: atomic_dec_and_test variation before object free at line 608.
+./sound/i2c/other/ak4114.c:149:5-24: atomic_dec_and_test variation before object free at line 150.
+./block/bio.c:657:6-25: atomic_dec_and_test variation before object free at line 658.
+./drivers/infiniband/core/iwcm.c:215:5-24: atomic_dec_and_test variation before object free at line 217.
+./drivers/infiniband/hw/hns/hns_roce_qp.c:994:5-24: atomic_dec_and_test variation before object free at line 1001.
+./drivers/md/dm-integrity.c:1456:5-24: atomic_dec_and_test variation before object free at line 1473.
+./drivers/net/ethernet/chelsio/cxgb4/cxgb4_uld.c:453:17-36: atomic_dec_and_test variation before object free at line 456.
+./drivers/net/ethernet/chelsio/cxgb4/l2t.c:388:5-24: atomic_dec_and_test variation before object free at line 389.
+./drivers/net/ethernet/jme.c:1275:9-28: atomic_dec_and_test variation before object free at line 1299.
+./drivers/net/ethernet/jme.c:1275:9-28: atomic_dec_and_test variation before object free at line 1338.
+./drivers/net/ethernet/sun/niu.c:9555:5-24: atomic_dec_and_test variation before object free at line 9556.
+./fs/btrfs/inode.c:2879:45-46: atomic_add_unless
+./fs/kernfs/dir.c:511:13-32: atomic_dec_and_test variation before object free at line 545.
+./fs/kernfs/dir.c:541:6-25: atomic_dec_and_test variation before object free at line 545.
+./include/linux/nsproxy.h:104:5-24: atomic_dec_and_test variation before object free at line 105.
+./include/net/lwtunnel.h:70:5-24: atomic_dec_and_test variation before object free at line 71.
+./kernel/acct.c:135:5-29: atomic_dec_and_test variation before object free at line 136.
+./kernel/audit_tree.c:141:5-29: atomic_dec_and_test variation before object free at line 142.
+./kernel/bpf/cpumap.c:220:5-24: atomic_dec_and_test variation before object free at line 227.
+./kernel/user_namespace.c:200:10-29: atomic_dec_and_test variation before object free at line 195.
+./arch/powerpc/mm/book3s64/iommu_api.c:457:40-41: atomic_add_unless
+./drivers/gpu/drm/i915/gt/intel_timeline.c:404:5-24: atomic_dec_and_test variation before object free at line 405.
+./drivers/gpu/drm/i915/gt/intel_timeline.c:400:47-48: atomic_add_unless
+./fs/fscache/cache.c:74:6-25: atomic_dec_and_test variation before object free at line 75.
+./fs/fscache/cache.c:74:6-25: atomic_dec_and_test variation before object free at line 81.
+./fs/hfsplus/bnode.c:632:7-26: atomic_dec_and_test variation before object free at line 645.
+./fs/nfsd/nfs4state.c:1318:6-25: atomic_dec_and_test variation before object free at line 1322.
+./fs/nfsd/nfs4state.c:222:5-24: atomic_dec_and_test variation before object free at line 223.
+./kernel/cgroup/cgroup.c:5405:5-24: atomic_dec_and_test variation before object free at line 5407.
+./kernel/sched/topology.c:570:6-25: atomic_dec_and_test variation before object free at line 571.
+./kernel/sched/topology.c:458:7-26: atomic_dec_and_test variation before object free at line 472.
+./kernel/sched/topology.c:482:6-25: atomic_dec_and_test variation before object free at line 485.
+./mm/kmemleak.c:491:6-25: atomic_dec_and_test variation before object free at line 503.
+./mm/shmem.c:1346:6-25: atomic_dec_and_test variation before object free at line 1326.
+./mm/shmem.c:1346:6-25: atomic_dec_and_test variation before object free at line 1345.
+Skipping coccinelle SmPL patch: ./scripts/coccinelle/api/check_bq27xxx_data.cocci
+You have coccinelle:           1.0.4
+This SmPL patch requires:      1.0.7
+./fs/ceph/debugfs.c:321:0-23: WARNING: congestion_kb_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra186-emc.c:158:0-23: WARNING: tegra186_emc_debug_max_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra186-emc.c:128:0-23: WARNING: tegra186_emc_debug_min_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/input/touchscreen/edt-ft5x06.c:694:0-23: WARNING: debugfs_mode_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/kvm/debugfs.c:18:0-23: WARNING: vcpu_timer_advance_ns_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/kvm/debugfs.c:27:0-23: WARNING: vcpu_tsc_offset_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/kvm/debugfs.c:36:0-23: WARNING: vcpu_tsc_scaling_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/kvm/debugfs.c:44:0-23: WARNING: vcpu_tsc_scaling_frac_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/xmon/xmon.c:3998:0-23: WARNING: xmon_dbgfs_ops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./fs/ocfs2/blockcheck.c:232:0-23: WARNING: blockcheck_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra20-emc.c:605:0-23: WARNING: tegra_emc_debug_max_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra20-emc.c:575:0-23: WARNING: tegra_emc_debug_min_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/panel/panel-sitronix-st7703.c:511:0-23: WARNING: allpixelson_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c:1544:0-23: WARNING: fops_ib_preempt should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c:1547:0-23: WARNING: fops_sclk_set should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/cavium-octeon/oct_ilm.c:65:0-23: WARNING: reset_statistics_ops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/staging/android/ion/ion.c:554:0-23: WARNING: debug_shrink_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra124-emc.c:1133:0-23: WARNING: tegra_emc_debug_max_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra124-emc.c:1103:0-23: WARNING: tegra_emc_debug_min_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/platform/intel/iosf_mbi.c:482:0-23: WARNING: iosf_mcr_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/platforms/cell/axon_msi.c:462:0-23: WARNING: fops_msic should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/kernel/spinlock_test.c:117:0-23: WARNING: fops_multi should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/kernel/spinlock_test.c:38:0-23: WARNING: fops_ss should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/arm/mach-omap2/pm-debug.c:222:0-23: WARNING: pm_dbg_option_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/arm/mach-omap2/pm-debug.c:173:0-23: WARNING: pwrdm_suspend_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/fault-inject.c:187:0-23: WARNING: fops_stacktrace_depth should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/fault-inject.c:169:0-23: WARNING: fops_ul should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra210-emc-core.c:1695:0-23: WARNING: tegra210_emc_debug_max_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra210-emc-core.c:1665:0-23: WARNING: tegra210_emc_debug_min_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra210-emc-core.c:1726:0-23: WARNING: tegra210_emc_debug_temperature_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/kernel/setup_64.c:991:0-23: WARNING: fops_rfi_flush should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/notifier-error-inject.c:18:0-23: WARNING: fops_errno should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra30-emc.c:1211:0-23: WARNING: tegra_emc_debug_max_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra30-emc.c:1181:0-23: WARNING: tegra_emc_debug_min_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/i915/gvt/debugfs.c:150:0-23: WARNING: vgpu_scan_nonprivbb_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/test_fpu.c:66:0-23: WARNING: test_fpu_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/power/avs/smartreflex.c:820:0-23: WARNING: pm_sr_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/sti/sti_drv.c:71:0-23: WARNING: sti_drm_fps_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/msm/adreno/a5xx_debugfs.c:148:0-23: WARNING: reset_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:934:0-23: WARNING: adv_channel_map_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:990:0-23: WARNING: adv_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:962:0-23: WARNING: adv_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1074:0-23: WARNING: auth_payload_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:494:0-23: WARNING: auto_accept_delay_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:268:0-23: WARNING: conn_info_max_age_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:240:0-23: WARNING: conn_info_min_age_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:878:0-23: WARNING: conn_latency_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:850:0-23: WARNING: conn_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:822:0-23: WARNING: conn_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:522:0-23: WARNING: idle_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1046:0-23: WARNING: max_key_size_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:479:0-23: WARNING: min_encrypt_key_size_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1018:0-23: WARNING: min_key_size_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:659:0-23: WARNING: rpa_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:578:0-23: WARNING: sniff_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:550:0-23: WARNING: sniff_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:906:0-23: WARNING: supervision_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:422:0-23: WARNING: voice_setting_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/platforms/powernv/memtrace.c:299:0-23: WARNING: memtrace_init_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/video/fbdev/omap2/omapfb/displays/panel-sony-acx565akm.c:479:9-17: WARNING: use scnprintf or sprintf
+./drivers/usb/misc/usbsevseg.c:196:8-16: WARNING: use scnprintf or sprintf
+./drivers/usb/atm/cxacru.c:329:9-17: WARNING: use scnprintf or sprintf
+./drivers/usb/atm/cxacru.c:312:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/8250/8250_port.c:3033:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ufs/ufshcd.c:1757:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ufs/ufshcd.c:1780:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ufs/ufshcd.c:1465:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pmcraid.c:4091:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pmcraid.c:4058:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pmcraid.c:3999:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi_tgt/ibmvscsi_tgt.c:3638:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi_tgt/ibmvscsi_tgt.c:3632:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi_tgt/ibmvscsi_tgt.c:3646:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/fsl_imx8_ddr_perf.c:119:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm-cci.c:309:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm-cci.c:528:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm-cci.c:708:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm-cci.c:699:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/ath/ath5k/sysfs.c:76:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/ath/ath5k/sysfs.c:67:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3145:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3133:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3158:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3197:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3184:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3171:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3063:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3047:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3079:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3120:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3106:8-16: WARNING: use scnprintf or sprintf
+./drivers/message/fusion/mptscsih.c:3092:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:377:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:355:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:392:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:362:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:348:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:332:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/xgene-hwmon.c:339:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4260.c:101:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4260.c:82:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4151.c:131:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-sensor-custom.c:371:10-18: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:568:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:342:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:687:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:538:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:598:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:628:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:381:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-lenovo.c:658:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/nouveau/nouveau_hwmon.c:44:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/nouveau/nouveau_hwmon.c:57:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/nouveau/nouveau_hwmon.c:90:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_atombios.c:1950:8-16: WARNING: use scnprintf or sprintf
+./drivers/firewire/core-device.c:375:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/hw_random/s390-trng.c:114:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/bgrt.c:28:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/bgrt.c:35:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/bgrt.c:21:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/bgrt.c:42:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/bgrt.c:49:8-16: WARNING: use scnprintf or sprintf
+./arch/arm/mm/cache-l2x0-pmu.c:346:8-16: WARNING: use scnprintf or sprintf
+./kernel/cpu.c:2351:8-16: WARNING: use scnprintf or sprintf
+./kernel/cpu.c:2337:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:88:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:514:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:601:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:109:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:317:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:140:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:166:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:338:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:217:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:193:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:244:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:63:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/pm8001/pm8001_ctl.c:881:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:2170:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:2180:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:2190:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:1916:10-18: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:1797:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrb.c:1933:9-17: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:3050:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:9878:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:8693:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:8710:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:8574:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:8640:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2841:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2830:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2820:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2744:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2772:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2917:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2959:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2852:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2866:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2982:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:3015:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:2999:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/thinkpad_acpi.c:6373:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/sysfs.c:80:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/sysfs.c:70:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:919:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:989:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:1013:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:1019:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:1001:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:961:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:774:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:710:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:733:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:860:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:913:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:820:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:783:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/applesmc.c:801:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/omapdrm/displays/panel-dsi-cm.c:465:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/omapdrm/displays/panel-dsi-cm.c:435:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/omapdrm/displays/panel-dsi-cm.c:513:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/omapdrm/displays/panel-dsi-cm.c:558:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/arm/display/komeda/komeda_dev.c:108:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/arm/display/komeda/komeda_dev.c:99:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/arm/display/komeda/komeda_dev.c:76:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/df_v3_6.c:262:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c:69:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c:104:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c:52:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c:86:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vram_mgr.c:117:9-17: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_ras.c:422:9-17: WARNING: use scnprintf or sprintf
+./drivers/char/hw_random/core.c:399:8-16: WARNING: use scnprintf or sprintf
+./drivers/block/aoe/aoeblk.c:102:8-16: WARNING: use scnprintf or sprintf
+./drivers/block/aoe/aoeblk.c:55:9-17: WARNING: use scnprintf or sprintf
+./drivers/block/aoe/aoeblk.c:88:9-17: WARNING: use scnprintf or sprintf
+./drivers/block/aoe/aoeblk.c:110:8-16: WARNING: use scnprintf or sprintf
+./drivers/block/aoe/aoeblk.c:40:8-16: WARNING: use scnprintf or sprintf
+./drivers/base/core.c:1763:8-16: WARNING: use scnprintf or sprintf
+./drivers/base/core.c:1742:8-16: WARNING: use scnprintf or sprintf
+./drivers/base/core.c:1712:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-dsi-cm.c:442:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-dsi-cm.c:412:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-dsi-cm.c:490:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-dsi-cm.c:535:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2703:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2713:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2723:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2683:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2733:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2743:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2753:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2673:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2649:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2663:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2639:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2629:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/serial_core.c:2693:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/fieldbus/dev_core.c:73:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_sas.c:519:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_sas.c:566:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_sas.c:1169:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:671:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:662:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:1068:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:704:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:935:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:1158:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:683:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:385:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:910:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:833:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:276:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:326:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:230:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_sysfs.c:818:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2891:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2872:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2910:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2954:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3678:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3698:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2975:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3053:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2997:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3335:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3248:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2932:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3090:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3017:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3118:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3836:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3858:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:3878:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2770:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2745:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2793:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2852:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2832:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mpt3sas/mpt3sas_ctl.c:2813:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fnic/fnic_attrs.c:35:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fnic/fnic_attrs.c:43:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fnic/fnic_attrs.c:29:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/cio/chp.c:285:8-16: WARNING: use scnprintf or sprintf
+./drivers/ptp/ptp_sysfs.c:16:8-16: WARNING: use scnprintf or sprintf
+./drivers/ptp/ptp_sysfs.c:230:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm_spe_pmu.c:129:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/can/at91_can.c:1185:9-17: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:296:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:306:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:237:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:275:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:286:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:264:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:227:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:162:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:143:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:218:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:208:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:199:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:190:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:152:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:181:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:134:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdcore.c:171:8-16: WARNING: use scnprintf or sprintf
+./drivers/macintosh/ams/ams-core.c:53:8-16: WARNING: use scnprintf or sprintf
+./drivers/iio/industrialio-core.c:1331:8-16: WARNING: use scnprintf or sprintf
+./drivers/iio/industrialio-core.c:1321:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/vexpress-hwmon.c:30:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/vexpress-hwmon.c:44:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/vexpress-hwmon.c:63:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:472:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:422:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:588:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:390:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:520:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:407:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:554:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:430:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/stts751.c:512:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/max16065.c:190:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/max16065.c:215:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/max16065.c:203:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/max16065.c:252:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina2xx.c:453:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina2xx.c:540:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina2xx.c:484:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina2xx.c:313:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-sony.c:611:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-sony.c:648:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-sony.c:660:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_si_intf.c:1617:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_si_intf.c:1640:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_si_intf.c:1606:8-16: WARNING: use scnprintf or sprintf
+./mm/backing-dev.c:209:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/sstfb.c:736:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:86:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:495:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:32:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:418:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:519:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/omapfb-sysfs.c:504:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:233:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:421:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:393:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:384:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:260:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:296:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbsysfs.c:288:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/snic/snic_attrs.c:49:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/snic/snic_attrs.c:62:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/snic/snic_attrs.c:40:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/snic/snic_attrs.c:30:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:201:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:274:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:282:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:304:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:211:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:265:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:313:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:160:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:257:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:248:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:182:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:191:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:224:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:236:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/qla4xxx/ql4_attr.c:174:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/pcmcia/sym53c500_cs.c:621:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mvsas/mv_init.c:703:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/mvsas/mv_init.c:755:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_mbox.c:3992:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_mbox.c:4061:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:538:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:898:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:528:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:799:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:561:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:908:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:645:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:549:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:724:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:775:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hpsa.c:746:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2054:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2725:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2499:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2574:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2714:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2364:10-18: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2648:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2876:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:967:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:3004:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:2821:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/sony-laptop.c:4002:8-16: WARNING: use scnprintf or sprintf
+./drivers/mtd/mtdpart.c:220:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/mei/main.c:789:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:429:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:542:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:484:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:566:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:596:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:641:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:508:8-16: WARNING: use scnprintf or sprintf
+./drivers/misc/enclosure.c:626:8-16: WARNING: use scnprintf or sprintf
+./drivers/ide/ide-park.c:112:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/s3c-hwmon.c:169:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/s3c-hwmon.c:190:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/pmbus_core.c:968:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/pmbus_core.c:1014:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/pmbus_core.c:2014:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/pmbus_core.c:980:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-koneplus.c:247:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-koneplus.c:314:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-isku.c:66:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-arvo.c:149:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-arvo.c:95:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-arvo.c:45:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:521:9-17: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:475:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:418:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:363:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:688:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/radeon/radeon_pm.c:704:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_xgmi.c:234:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_xgmi.c:263:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_xgmi.c:181:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_psp.c:2441:8-16: WARNING: use scnprintf or sprintf
+./drivers/edac/edac_mc_sysfs.c:210:8-16: WARNING: use scnprintf or sprintf
+./drivers/edac/edac_mc_sysfs.c:490:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2694:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2743:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2612:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2659:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2765:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2676:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2711:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2727:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2628:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_msghandler.c:2643:8-16: WARNING: use scnprintf or sprintf
+./drivers/ata/libata-sata.c:954:8-16: WARNING: use scnprintf or sprintf
+./drivers/ata/libata-sata.c:830:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/dock.c:563:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/dock.c:544:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/dock.c:495:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/dock.c:506:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/intel/pt.c:95:8-16: WARNING: use scnprintf or sprintf
+./net/netfilter/xt_IDLETIMER.c:88:9-17: WARNING: use scnprintf or sprintf
+./kernel/events/core.c:10574:8-16: WARNING: use scnprintf or sprintf
+./kernel/events/core.c:10596:8-16: WARNING: use scnprintf or sprintf
+./kernel/events/core.c:10585:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ncr53c8xx.c:8243:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/53c700.c:2063:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1196:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:829:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:726:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1393:9-17: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1573:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1452:9-17: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:768:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1143:9-17: WARNING: use scnprintf or sprintf
+./drivers/s390/block/dasd_devmap.c:1115:9-17: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/panasonic-laptop.c:371:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/panasonic-laptop.c:383:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/panasonic-laptop.c:359:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/panasonic-laptop.c:395:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/lg-laptop.c:496:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/lg-laptop.c:322:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/lg-laptop.c:447:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/lg-laptop.c:406:8-16: WARNING: use scnprintf or sprintf
+./drivers/platform/x86/lg-laptop.c:364:8-16: WARNING: use scnprintf or sprintf
+./drivers/nvme/host/core.c:2852:8-16: WARNING: use scnprintf or sprintf
+./drivers/nvme/host/core.c:3612:8-16: WARNING: use scnprintf or sprintf
+./drivers/nvme/host/core.c:3602:8-16: WARNING: use scnprintf or sprintf
+./drivers/nvme/host/core.c:3592:8-16: WARNING: use scnprintf or sprintf
+./drivers/nvme/host/core.c:3558:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1629:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1104:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1358:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1319:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1571:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1260:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1616:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1447:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1477:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1507:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1603:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1067:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1289:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1039:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1409:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1378:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1146:8-16: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1538:9-17: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1177:9-17: WARNING: use scnprintf or sprintf
+./drivers/input/tablet/aiptek.c:1219:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/inspur-ipsps.c:94:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/inspur-ipsps.c:114:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/pmbus/inspur-ipsps.c:73:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina3221.c:701:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/wacom_sys.c:1796:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/panel/panel-tpo-td043mtea1.c:217:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/panel/panel-tpo-td043mtea1.c:189:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:266:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:285:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:276:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:335:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:390:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:465:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:107:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:75:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:83:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:91:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:99:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/i915/i915_sysfs.c:326:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_device.c:136:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_device.c:160:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_device.c:182:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_device.c:204:8-16: WARNING: use scnprintf or sprintf
+./drivers/crypto/picoxcell_crypto.c:1200:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/intel/core.c:4465:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/intel/core.c:4481:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/intel/core.c:4431:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1640:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1626:9-17: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1596:9-17: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1611:9-17: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1550:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/uvesafb.c:1581:9-17: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbcon.c:3219:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/core/fbcon.c:3194:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/8250/8250_aspeed_vuart.c:72:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/8250/8250_aspeed_vuart.c:142:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/serial/8250/8250_aspeed_vuart.c:105:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/fbtft/fbtft-sysfs.c:202:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ufs/ufs-sysfs.c:153:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1413:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1197:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1318:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1403:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1493:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1423:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1393:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1064:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:945:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1092:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/myrs.c:1308:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hptiop.c:1131:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/hptiop.c:1122:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fcoe/fcoe_sysfs.c:376:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fcoe/fcoe_sysfs.c:268:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/fcoe/fcoe_sysfs.c:253:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/be2iscsi/be_mgmt.c:1245:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/be2iscsi/be_mgmt.c:1139:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/be2iscsi/be_mgmt.c:1158:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/be2iscsi/be_mgmt.c:1278:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm_dsu_pmu.c:138:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm_dsu_pmu.c:148:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:370:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:420:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:726:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:479:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:172:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:271:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:224:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:665:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/wireless/marvell/libertas/mesh.c:604:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4222.c:115:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4222.c:97:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc2945.c:336:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc2945.c:229:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kovaplus.c:330:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kovaplus.c:277:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kovaplus.c:339:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kovaplus.c:349:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kovaplus.c:370:8-16: WARNING: use scnprintf or sprintf
+./drivers/fsi/fsi-master-ast-cf.c:1085:8-16: WARNING: use scnprintf or sprintf
+./drivers/block/virtio_blk.c:635:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/core.c:2228:8-16: WARNING: use scnprintf or sprintf
+./arch/x86/events/core.c:2286:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/sm501fb.c:1169:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap/omapfb_main.c:1382:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap/omapfb_main.c:1306:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/comedi/comedi_fops.c:399:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/comedi/comedi_fops.c:512:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/comedi/comedi_fops.c:455:8-16: WARNING: use scnprintf or sprintf
+./drivers/staging/comedi/comedi_fops.c:568:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6135:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6129:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6308:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6160:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6471:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6422:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6148:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6275:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/smartpqi/smartpqi_init.c:6172:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3331:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3321:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3247:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3294:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3311:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3301:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/megaraid/megaraid_sas_base.c:3385:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:908:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:860:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:888:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:853:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:808:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:728:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:822:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:927:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:900:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:874:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:714:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/bfa/bfad_attr.c:839:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:299:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:275:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:287:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:263:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:376:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:311:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:350:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:337:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:363:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/arcmsr/arcmsr_attr.c:324:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aic94xx/aic94xx_init.c:275:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aic94xx/aic94xx_init.c:283:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aic94xx/aic94xx_init.c:266:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aic94xx/aic94xx_init.c:454:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/net/qeth_core_sys.c:415:9-17: WARNING: use scnprintf or sprintf
+./drivers/s390/net/qeth_core_sys.c:505:9-17: WARNING: use scnprintf or sprintf
+./drivers/s390/char/raw3270.c:1075:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/char/raw3270.c:1059:8-16: WARNING: use scnprintf or sprintf
+./drivers/s390/char/raw3270.c:1067:8-16: WARNING: use scnprintf or sprintf
+./drivers/perf/arm-ccn.c:224:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/most_usb.c:833:9-17: WARNING: use scnprintf or sprintf
+./drivers/iio/trigger/stm32-timer-trigger.c:299:8-16: WARNING: use scnprintf or sprintf
+./drivers/iio/chemical/sps30.c:414:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/smm665.c:354:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/smm665.c:369:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:275:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:288:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:263:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:312:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:304:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:198:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:246:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:224:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:235:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5627.c:212:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:554:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:604:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:337:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:367:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:406:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:435:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:474:9-17: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:256:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/occ/common.c:307:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4261.c:150:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4261.c:133:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4215.c:173:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4215.c:150:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4215.c:162:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc4215.c:142:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/drm_sysfs.c:172:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/drm_sysfs.c:185:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/drm_sysfs.c:159:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/arm/malidp_drv.c:655:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_gtt_mgr.c:52:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_gtt_mgr.c:70:8-16: WARNING: use scnprintf or sprintf
+./drivers/fsi/fsi-master-gpio.c:720:8-16: WARNING: use scnprintf or sprintf
+./drivers/char/ipmi/ipmi_ssif.c:1242:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/udlfb.c:1436:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/udlfb.c:1428:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/udlfb.c:1444:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/udlfb.c:1452:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-tpo-td043mtea1.c:202:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/omap2/omapfb/displays/panel-tpo-td043mtea1.c:172:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/gbefb.c:1065:8-16: WARNING: use scnprintf or sprintf
+./drivers/video/fbdev/gbefb.c:1072:8-16: WARNING: use scnprintf or sprintf
+./drivers/usb/usbip/vudc_sysfs.c:203:8-16: WARNING: use scnprintf or sprintf
+./drivers/usb/usbip/stub_dev.c:33:8-16: WARNING: use scnprintf or sprintf
+./drivers/usb/core/sysfs.c:942:8-16: WARNING: use scnprintf or sprintf
+./drivers/usb/core/sysfs.c:750:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/vt/vt.c:3905:8-16: WARNING: use scnprintf or sprintf
+./drivers/tty/vt/vt.c:3913:8-16: WARNING: use scnprintf or sprintf
+./drivers/spi/spi-tle62x0.c:144:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ufs/ufs-qcom.c:756:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:1557:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:1481:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:1505:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:1590:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:955:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:921:10-18: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:826:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/scsi_transport_fc.c:1255:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/isci/init.c:140:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2996:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2959:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2979:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2969:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2988:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/ibmvscsi/ibmvfc.c:2949:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/csiostor/csio_scsi.c:1433:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/csiostor/csio_scsi.c:1369:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/csiostor/csio_scsi.c:1477:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aacraid/linit.c:1355:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aacraid/linit.c:1381:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aacraid/linit.c:1388:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aacraid/linit.c:563:9-17: WARNING: use scnprintf or sprintf
+./drivers/scsi/aacraid/linit.c:590:8-16: WARNING: use scnprintf or sprintf
+./drivers/pci/p2pdma.c:69:8-16: WARNING: use scnprintf or sprintf
+./drivers/pci/p2pdma.c:78:8-16: WARNING: use scnprintf or sprintf
+./drivers/pci/p2pdma.c:56:8-16: WARNING: use scnprintf or sprintf
+./drivers/net/can/janz-ican3.c:1834:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:254:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:398:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:409:9-17: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:211:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:222:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:272:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:297:10-18: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:326:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:282:9-17: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:263:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:318:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:309:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:233:8-16: WARNING: use scnprintf or sprintf
+./drivers/most/core.c:244:8-16: WARNING: use scnprintf or sprintf
+./drivers/mfd/janz-cmodio.c:157:8-16: WARNING: use scnprintf or sprintf
+./drivers/iio/trigger/iio-trig-hrtimer.c:41:8-16: WARNING: use scnprintf or sprintf
+./drivers/iio/light/veml6030.c:131:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:275:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:261:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:247:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:187:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:179:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:163:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:230:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:216:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/sch5636.c:202:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ltc2990.c:150:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/lineage-pem.c:283:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/lineage-pem.c:299:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/lineage-pem.c:331:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/lineage-pem.c:315:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina209.c:366:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina209.c:262:8-16: WARNING: use scnprintf or sprintf
+./drivers/hwmon/ina209.c:346:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-pyra.c:289:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-pyra.c:306:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-pyra.c:327:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:406:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:397:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:438:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:550:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:448:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-roccat-kone.c:429:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-picolcd_core.c:304:8-16: WARNING: use scnprintf or sprintf
+./drivers/hid/hid-picolcd_core.c:259:9-17: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1764:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1802:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1846:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:329:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:189:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:531:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:547:9-17: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1566:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1493:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1898:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:1871:9-17: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2531:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2501:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2205:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2997:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:3004:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2221:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2810:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2960:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2967:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2173:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2259:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2233:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2189:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2728:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2735:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2769:8-16: WARNING: use scnprintf or sprintf
+./drivers/gpu/drm/amd/amdgpu/amdgpu_pm.c:2776:8-16: WARNING: use scnprintf or sprintf
+./drivers/acpi/acpi_lpss.c:744:8-16: WARNING: use scnprintf or sprintf
+./drivers/scsi/aic7xxx/aic79xx_core.c:9405:27-34: WARNING opportunity for kmemdup
+./drivers/scsi/aic7xxx/aic7xxx_core.c:6882:27-34: WARNING opportunity for kmemdup
+./security/integrity/ima/ima_policy.c:287:10-17: WARNING opportunity for kmemdup
+./fs/omfs/inode.c:366:9-16: WARNING opportunity for kmemdup
+./drivers/power/supply/goldfish_battery.c:225:2-9: line 225 is redundant because platform_get_irq() already prints an error
+./drivers/video/fbdev/pxa3xx-gcu.c:617:2-9: line 617 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/sc27xx_fuel_gauge.c:1233:2-9: line 1233 is redundant because platform_get_irq() already prints an error
+./drivers/net/ipa/gsi.c:1978:2-9: line 1978 is redundant because platform_get_irq() already prints an error
+./drivers/memory/tegra/tegra30-emc.c:1315:2-9: line 1315 is redundant because platform_get_irq() already prints an error
+./drivers/iio/adc/ab8500-gpadc.c:1107:2-9: line 1107 is redundant because platform_get_irq() already prints an error
+./drivers/iio/adc/ab8500-gpadc.c:1113:2-9: line 1113 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/etnaviv/etnaviv_gpu.c:1775:2-9: line 1775 is redundant because platform_get_irq() already prints an error
+./drivers/crypto/inside-secure/safexcel.c:1165:3-10: line 1165 is redundant because platform_get_irq() already prints an error
+./drivers/char/hw_random/imx-rngc.c:256:2-9: line 256 is redundant because platform_get_irq() already prints an error
+./drivers/ata/libahci_platform.c:587:3-10: line 587 is redundant because platform_get_irq() already prints an error
+./drivers/staging/media/rkvdec/rkvdec.c:1054:2-9: line 1054 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/da9150-fg.c:517:2-9: line 517 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/bd70528-charger.c:173:3-10: line 173 is redundant because platform_get_irq() already prints an error
+./drivers/memory/tegra/mc.c:663:2-9: line 663 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/mediatek/mtk_dsi.c:1130:2-9: line 1130 is redundant because platform_get_irq() already prints an error
+./drivers/dma/sf-pdma/sf-pdma.c:395:3-10: line 395 is redundant because platform_get_irq() already prints an error
+./drivers/dma/sf-pdma/sf-pdma.c:410:3-10: line 410 is redundant because platform_get_irq() already prints an error
+./drivers/char/hw_random/cctrng.c:532:2-9: line 532 is redundant because platform_get_irq() already prints an error
+./drivers/ata/sata_highbank.c:473:2-9: line 473 is redundant because platform_get_irq() already prints an error
+./drivers/video/fbdev/pxa168fb.c:622:2-9: line 622 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/da9150-charger.c:470:2-9: line 470 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/da9150-charger.c:491:2-9: line 491 is redundant because platform_get_irq() already prints an error
+./drivers/net/ipa/ipa_interrupt.c:218:2-9: line 218 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/tegra/dpaux.c:471:2-9: line 471 is redundant because platform_get_irq() already prints an error
+./drivers/firmware/tegra/bpmp-tegra210.c:206:2-9: line 206 is redundant because platform_get_irq() already prints an error
+./drivers/firmware/tegra/bpmp-tegra210.c:218:2-9: line 218 is redundant because platform_get_irq() already prints an error
+./drivers/dma/xilinx/xilinx_dpdma.c:1414:2-9: line 1414 is redundant because platform_get_irq() already prints an error
+./arch/arm/plat-pxa/ssp.c:150:2-9: line 150 is redundant because platform_get_irq() already prints an error
+./drivers/thermal/da9062-thermal.c:252:2-9: line 252 is redundant because platform_get_irq() already prints an error
+./drivers/staging/mt7621-pci/pci-mt7621.c:391:2-9: line 391 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/axp20x_usb_power.c:633:3-10: line 633 is redundant because platform_get_irq() already prints an error
+./drivers/i2c/busses/i2c-hix5hd2.c:417:2-9: line 417 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/tegra/sor.c:3785:2-9: line 3785 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/mediatek/mtk_cec.c:212:2-9: line 212 is redundant because platform_get_irq() already prints an error
+./drivers/edac/altera_edac.c:2104:2-9: line 2104 is redundant because platform_get_irq() already prints an error
+./drivers/edac/altera_edac.c:2139:2-9: line 2139 is redundant because platform_get_irq() already prints an error
+./drivers/net/ipa/ipa_smp2p.c:180:2-9: line 180 is redundant because platform_get_irq() already prints an error
+./drivers/i2c/busses/i2c-stm32f7.c:1954:3-10: line 1954 is redundant because platform_get_irq() already prints an error
+./drivers/i2c/busses/i2c-stm32f7.c:1962:3-10: line 1962 is redundant because platform_get_irq() already prints an error
+./drivers/ata/pata_rb532_cf.c:119:2-9: line 119 is redundant because platform_get_irq() already prints an error
+./sound/soc/fsl/fsl_easrc.c:1908:2-9: line 1908 is redundant because platform_get_irq() already prints an error
+./drivers/video/fbdev/vt8500lcdfb.c:376:2-9: line 376 is redundant because platform_get_irq() already prints an error
+./drivers/video/fbdev/s3c2410fb.c:849:2-9: line 849 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/qcom_smbb.c:933:3-10: line 933 is redundant because platform_get_irq() already prints an error
+./drivers/power/supply/axp20x_ac_power.c:381:3-10: line 381 is redundant because platform_get_irq() already prints an error
+./drivers/media/platform/sunxi/sun8i-rotate/sun8i_rotate.c:751:2-9: line 751 is redundant because platform_get_irq() already prints an error
+./drivers/mailbox/stm32-ipcc.c:261:4-11: line 261 is redundant because platform_get_irq() already prints an error
+./drivers/edac/xgene_edac.c:1921:4-11: line 1921 is redundant because platform_get_irq() already prints an error
+./drivers/video/fbdev/pxafb.c:2330:2-9: line 2330 is redundant because platform_get_irq() already prints an error
+./drivers/thermal/db8500_thermal.c:178:2-9: line 178 is redundant because platform_get_irq() already prints an error
+./drivers/thermal/db8500_thermal.c:192:2-9: line 192 is redundant because platform_get_irq() already prints an error
+./drivers/mailbox/platform_mhu.c:141:3-10: line 141 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/omapdrm/omap_dmm_tiler.c:824:2-9: line 824 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/mediatek/mtk_dpi.c:768:2-9: line 768 is redundant because platform_get_irq() already prints an error
+./drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_drv.c:263:2-9: line 263 is redundant because platform_get_irq() already prints an error
+./drivers/clk/mediatek/clk-mt6765.c:912:3-8: No need to set .owner here. The core will do it.
+./drivers/mailbox/pcc.c:580:3-8: No need to set .owner here. The core will do it.
+./sound/soc/samsung/midas_wm1811.c:534:3-8: No need to set .owner here. The core will do it.
+./drivers/gpu/drm/tilcdc/tilcdc_panel.c:402:3-8: No need to set .owner here. The core will do it.
+./arch/arm/mach-zx/zx296702-pm-domain.c:192:3-8: No need to set .owner here. The core will do it.
+./sound/soc/sunxi/sun4i-i2s.c:1185:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/dwc/pci-exynos.c:93:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c:174:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/tegra/drm.c:350:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/firmware/imx/imx-scu-soc.c:134:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/dwc/pci-meson.c:157:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/dwc/pci-meson.c:250:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c:232:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun4i_hdmi_ddc_clk.c:138:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun4i_dotclock.c:194:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/omapdrm/dss/hdmi_phy.c:194:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/omapdrm/dss/hdmi4_core.c:886:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/nouveau/nvkm/subdev/acr/tu102.c:213:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/nouveau/nvkm/subdev/acr/gp102.c:265:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./include/linux/err.h:59:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/qualcomm/phy-qcom-ipq806x-usb.c:550:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./tools/include/linux/err.h:57:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/video/backlight/corgi_lcd.c:486:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/usb/dwc3/dwc3-meson-g12a.c:629:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/tegra/phy-tegra194-p2u.c:95:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/pci-tegra.c:1311:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/memory/renesas-rpc-if.c:202:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/tegra/gem.c:473:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/omapdrm/dss/hdmi4.c:625:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/scsi/qla2xxx/tcm_qla2xxx.c:1490:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/rtc/rtc-pcf8523.c:361:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/pcie-rockchip-host.c:619:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/media/platform/exynos4-is/media-dev.c:1273:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/nouveau/nvkm/subdev/acr/gm200.c:467:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./tools/lib/bpf/btf.c:3154:10-16: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/dwc/pcie-kirin.c:141:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/controller/dwc/pcie-kirin.c:172:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c:281:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/omapdrm/dss/hdmi5_core.c:879:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/nouveau/nvkm/subdev/acr/gm20b.c:118:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/staging/mt7621-pci/pci-mt7621.c:276:25-28: WARNING: Suspicious code. resource_size is maybe missing with mem_resource
+./drivers/platform/x86/apple-gmux.c:628:25-28: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/mfd/altera-sysmgr.c:155:36-39: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/pcmcia/yenta_socket.c:639:30-33: WARNING: Suspicious code. resource_size is maybe missing with root
+./drivers/macintosh/macio_asic.c:221:26-29: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/macintosh/macio_asic.c:223:26-29: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/platform/chrome/wilco_ec/telemetry.c:259:1-17: WARNING: telem_fops: .read() and .write() have stream semantic; safe to change nonseekable_open -> stream_open.
+./drivers/gpio/gpiolib-cdev.c:1077:7-23: WARNING: gpio_fileops: .read() has stream semantic; safe to change nonseekable_open -> stream_open.
+./drivers/bus/ti-sysc.c:2110:2-8: ERROR: missing clk_put; clk_get on line 2102 and execution via conditional on line 2109
+./drivers/tty/serial/bcm63xx_uart.c:847:2-8: ERROR: missing clk_put; clk_get on line 842 and execution via conditional on line 846
+./block/badblocks.c:600:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/bluetooth/hci_h5.c:252:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/fsi/fsi-master-aspeed.c:358:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/irqchip/irq-stm32-exti.c:812:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/irqchip/irq-stm32-exti.c:813:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/pwm/pwm-lp3943.c:84:1-6: WARNING: invalid free of devm_ allocated data
+./arch/arm/common/dmabounce.c:564:2-18: WARNING: NULL check before some freeing functions is not needed.
+./arch/arm/common/dmabounce.c:566:2-18: WARNING: NULL check before some freeing functions is not needed.
+./arch/um/drivers/vector_user.c:403:2-7: WARNING: NULL check before some freeing functions is not needed.
+./fs/io_uring.c:5664:4-9: WARNING: NULL check before some freeing functions is not needed.
+./fs/io_uring.c:1558:2-7: WARNING: NULL check before some freeing functions is not needed.
+./fs/io_uring.c:3230:2-7: WARNING: NULL check before some freeing functions is not needed.
+./fs/io_uring.c:3336:2-7: WARNING: NULL check before some freeing functions is not needed.
+./drivers/gpu/drm/amd/display/dc/clk_mgr/dcn30/dcn30_clk_mgr.c:558:2-7: WARNING: NULL check before some freeing functions is not needed.
+./drivers/net/ethernet/aquantia/atlantic/aq_pci_func.c:342:1-7: ERROR: missing iounmap; ioremap on line 280 and execution via conditional on line 289
+./drivers/net/ethernet/8390/ax88796.c:961:1-7: ERROR: missing iounmap; ioremap on line 927 and execution via conditional on line 942
+./drivers/mtd/maps/sc520cdp.c:238:3-9: ERROR: missing iounmap; ioremap on line 228 and execution via conditional on line 230
+./drivers/memstick/host/jmb38x_ms.c:881:2-8: ERROR: missing iounmap; ioremap on line 859 and execution via conditional on line 879
+./drivers/irqchip/irq-gic.c:1301:3-9: ERROR: missing iounmap; ioremap on line 1288 and execution via conditional on line 1291
+./drivers/net/ethernet/intel/i40e/i40e_main.c:15074:2-8: ERROR: missing iounmap; ioremap on line 14926 and execution via conditional on line 15073
+./drivers/bus/mvebu-mbus.c:1115:2-8: ERROR: missing iounmap; ioremap on line 1108 and execution via conditional on line 1113
+./drivers/scsi/lpfc/lpfc_init.c:10549:1-7: ERROR: missing iounmap; ioremap on line 10436 and execution via conditional on line 10464
+./drivers/scsi/lpfc/lpfc_init.c:10549:1-7: ERROR: missing iounmap; ioremap on line 10463 and execution via conditional on line 10486
+./drivers/infiniband/core/umem.c:309:29-33: ERROR: reference preceded by free on line 307
+./drivers/spi/spidev.c:645:18-24: ERROR: reference preceded by free on line 639
+./fs/ocfs2/filecheck.c:510:36-41: ERROR: reference preceded by free on line 481
+./fs/ocfs2/filecheck.c:510:36-41: ERROR: reference preceded by free on line 489
+./drivers/acpi/scan.c:676:23-33: ERROR: reference preceded by free on line 671
+./lib/test_kasan.c:830:1-3: ERROR: reference preceded by free on line 829
+./lib/test_kasan.c:686:1-4: ERROR: reference preceded by free on line 678
+./lib/test_kasan.c:792:17-20: ERROR: reference preceded by free on line 791
+./lib/test_kasan.c:126:1-4: ERROR: reference preceded by free on line 125
+./lib/test_kasan.c:341:3-6: ERROR: reference preceded by free on line 340
+./lib/test_kasan.c:379:1-5: ERROR: reference preceded by free on line 372
+./lib/test_kasan.c:357:8-11: ERROR: reference preceded by free on line 356
+./mm/slub.c:4843:2-3: ERROR: reference preceded by free on line 4842
+./mm/slub.c:4849:1-2: ERROR: reference preceded by free on line 4848
+./mm/slub.c:4855:1-2: ERROR: reference preceded by free on line 4854
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega10_processpptables.c:703:28-37: ERROR: reference preceded by free on line 697
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4826:15-17: ERROR: reference preceded by free on line 4832
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4845:17-19: ERROR: reference preceded by free on line 4832
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:5141:15-17: ERROR: reference preceded by free on line 5145
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:5157:17-19: ERROR: reference preceded by free on line 5145
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:5099:11-29: ERROR: reference preceded by free on line 5099
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:5095:15-22: ERROR: reference preceded by free on line 5100
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4886:29-32: ERROR: reference preceded by free on line 4894
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4899:30-33: ERROR: reference preceded by free on line 4894
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4912:9-12: ERROR: reference preceded by free on line 4894
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4954:13-16: ERROR: reference preceded by free on line 4962
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4688:15-17: ERROR: reference preceded by free on line 4697
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4708:13-15: ERROR: reference preceded by free on line 4697
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4761:15-18: ERROR: reference preceded by free on line 4767
+./drivers/net/ethernet/mellanox/mlx4/resource_tracker.c:4781:17-20: ERROR: reference preceded by free on line 4767
+./drivers/net/ethernet/rocker/rocker_ofdpa.c:1936:8-11: ERROR: reference preceded by free on line 1924
+./fs/squashfs/decompressor_multi.c:179:8-19: ERROR: reference preceded by free on line 159
+./net/sctp/endpointola.c:221:21-23: ERROR: reference preceded by free on line 220
+./drivers/crypto/n2_core.c:1494:13-14: ERROR: reference preceded by free on line 1490
+./drivers/gpu/drm/ast/ast_mode.c:953:59-63: ERROR: reference preceded by free on line 948
+./fs/nfs/nfs4file.c:184:8-15: ERROR: reference preceded by free on line 184
+./fs/fuse/dev.c:2143:9-42: ERROR: reference preceded by free on line 2143
+./kernel/rcu/rcuperf.c:407:19-22: ERROR: reference preceded by free on line 413
+./kernel/rcu/rcuperf.c:413:10-13: ERROR: reference preceded by free on line 413
+./net/nfc/hci/core.c:113:5-8: ERROR: reference preceded by free on line 105
+./drivers/spi/spi-topcliff-pch.c:606:4-21: ERROR: reference preceded by free on line 584
+./drivers/spi/spi-topcliff-pch.c:610:4-21: ERROR: reference preceded by free on line 584
+./drivers/spi/spi-topcliff-pch.c:625:44-61: ERROR: reference preceded by free on line 584
+./net/batman-adv/tp_meter.c:1283:12-15: ERROR: reference preceded by free on line 1263
+./net/l2tp/l2tp_ppp.c:851:22-28: ERROR: reference preceded by free on line 736
+./net/l2tp/l2tp_ppp.c:856:27-33: ERROR: reference preceded by free on line 736
+./net/l2tp/l2tp_ppp.c:849:23-30: ERROR: reference preceded by free on line 797
+./net/l2tp/l2tp_ppp.c:854:28-35: ERROR: reference preceded by free on line 797
+./net/sctp/transport.c:149:21-30: ERROR: reference preceded by free on line 148
+./drivers/bcma/sprom.c:643:29-34: ERROR: reference preceded by free on line 632
+./drivers/gpu/drm/etnaviv/etnaviv_gem.c:329:8-15: ERROR: reference preceded by free on line 316
+./drivers/gpu/drm/v3d/v3d_gem.c:573:9-12: ERROR: reference preceded by free on line 571
+./drivers/infiniband/hw/mlx5/fs.c:1034:29-36: ERROR: reference preceded by free on line 1031
+./drivers/infiniband/hw/mlx5/fs.c:1417:29-36: ERROR: reference preceded by free on line 1415
+./drivers/misc/lkdtm/heap.c:88:7-11: ERROR: reference preceded by free on line 85
+./drivers/misc/lkdtm/heap.c:48:1-5: ERROR: reference preceded by free on line 47
+./drivers/pci/controller/pci-hyperv.c:2078:31-33: ERROR: reference preceded by free on line 2059
+./kernel/kthread.c:265:2-8: ERROR: reference preceded by free on line 260
+./kernel/kthread.c:278:1-7: ERROR: reference preceded by free on line 260
+./sound/pci/asihpi/asihpi.c:1208:14-18: ERROR: reference preceded by free on line 1202
+./sound/pci/asihpi/asihpi.c:1035:14-18: ERROR: reference preceded by free on line 1024
+./drivers/infiniband/hw/hns/hns_roce_hw_v1.c:877:1-6: ERROR: invalid free of structure field
+./drivers/infiniband/hw/hns/hns_roce_hw_v1.c:879:1-6: ERROR: invalid free of structure field
+./drivers/net/ethernet/cisco/enic/vnic_dev.c:861:1-7: ERROR: missing pci_free_consistent; pci_alloc_consistent on line 855 and return without freeing on line 861
+./drivers/message/fusion/mptctl.c:2538:2-8: ERROR: missing pci_free_consistent; pci_alloc_consistent on line 2406 and return without freeing on line 2538
+./drivers/iommu/ipmmu-vmsa.c:735:1-7: ERROR: missing put_device; call of_find_device_by_node on line 729, but without a corresponding object release within this function.
+./drivers/memory/tegra/tegra30-emc.c:1285:2-8: ERROR: missing put_device; call of_find_device_by_node on line 1278, but without a corresponding object release within this function.
+./drivers/memory/tegra/tegra30-emc.c:1290:2-8: ERROR: missing put_device; call of_find_device_by_node on line 1278, but without a corresponding object release within this function.
+./sound/soc/fsl/imx-es8328.c:207:1-7: ERROR: missing put_device; call of_find_device_by_node on line 138, but without a corresponding object release within this function.
+./arch/mips/ralink/ill_acc.c:84:1-7: ERROR: missing put_device; call of_find_device_by_node on line 61, but without a corresponding object release within this function.
+./arch/sparc/include/asm/floppy_32.h:363:1-7: ERROR: missing put_device; call of_find_device_by_node on line 326, but without a corresponding object release within this function.
+./arch/sparc/include/asm/floppy_32.h:366:1-7: ERROR: missing put_device; call of_find_device_by_node on line 326, but without a corresponding object release within this function.
+./arch/sparc/include/asm/floppy_32.h:363:1-7: ERROR: missing put_device; call of_find_device_by_node on line 332, but without a corresponding object release within this function.
+./arch/sparc/include/asm/floppy_32.h:366:1-7: ERROR: missing put_device; call of_find_device_by_node on line 332, but without a corresponding object release within this function.
+./drivers/net/ethernet/freescale/fman/fman_port.c:1894:1-7: ERROR: missing put_device; call of_find_device_by_node on line 1795, but without a corresponding object release within this function.
+./drivers/net/ethernet/freescale/fman/fman_port.c:1900:1-7: ERROR: missing put_device; call of_find_device_by_node on line 1795, but without a corresponding object release within this function.
+./drivers/soc/amlogic/meson-canvas.c:76:2-8: ERROR: missing put_device; call of_find_device_by_node on line 61, but without a corresponding object release within this function.
+./drivers/soc/amlogic/meson-canvas.c:78:1-7: ERROR: missing put_device; call of_find_device_by_node on line 61, but without a corresponding object release within this function.
+./drivers/thermal/qcom/tsens.c:759:4-10: ERROR: missing put_device; call of_find_device_by_node on line 715, but without a corresponding object release within this function.
+./arch/mips/cavium-octeon/octeon-platform.c:332:1-7: ERROR: missing put_device; call of_find_device_by_node on line 324, but without a corresponding object release within this function.
+./arch/mips/cavium-octeon/octeon-platform.c:395:1-7: ERROR: missing put_device; call of_find_device_by_node on line 387, but without a corresponding object release within this function.
+./drivers/net/ethernet/freescale/fman/mac.c:873:1-7: ERROR: missing put_device; call of_find_device_by_node on line 659, but without a corresponding object release within this function.
+./drivers/net/ethernet/freescale/fman/mac.c:873:1-7: ERROR: missing put_device; call of_find_device_by_node on line 758, but without a corresponding object release within this function.
+./arch/sparc/include/asm/floppy_64.h:595:3-9: ERROR: missing put_device; call of_find_device_by_node on line 589, but without a corresponding object release within this function.
+./arch/mips/cavium-octeon/octeon-usb.c:512:3-9: ERROR: missing put_device; call of_find_device_by_node on line 515, but without a corresponding object release within this function.
+./arch/mips/cavium-octeon/octeon-usb.c:550:1-7: ERROR: missing put_device; call of_find_device_by_node on line 515, but without a corresponding object release within this function.
+./arch/sparc/kernel/pci_sabre.c:335:2-8: ERROR: missing put_device; call of_find_device_by_node on line 324, but without a corresponding object release within this function.
+./arch/arm/mach-at91/pm.c:678:1-7: ERROR: missing put_device; call of_find_device_by_node on line 654, but without a corresponding object release within this function.
+./arch/arm/mach-at91/pm.c:615:1-7: ERROR: missing put_device; call of_find_device_by_node on line 580, but without a corresponding object release within this function.
+./arch/arm/mach-omap2/display.c:272:1-7: ERROR: missing put_device; call of_find_device_by_node on line 258, but without a corresponding object release within this function.
+./arch/sparc/kernel/of_device_common.c:23:1-7: ERROR: missing put_device; call of_find_device_by_node on line 18, but without a corresponding object release within this function.
+./arch/sparc/kernel/of_device_common.c:36:1-7: ERROR: missing put_device; call of_find_device_by_node on line 30, but without a corresponding object release within this function.
+./arch/sparc/kernel/of_device_common.c:50:1-7: ERROR: missing put_device; call of_find_device_by_node on line 42, but without a corresponding object release within this function.
+./arch/sparc/kernel/pci_psycho.c:308:2-8: ERROR: missing put_device; call of_find_device_by_node on line 290, but without a corresponding object release within this function.
+./drivers/gpu/drm/sun4i/sun4i_tcon.c:1450:1-7: ERROR: missing put_device; call of_find_device_by_node on line 1428, but without a corresponding object release within this function.
+./drivers/scsi/sun_esp.c:549:1-7: ERROR: missing put_device; call of_find_device_by_node on line 541, but without a corresponding object release within this function.
+./drivers/pci/hotplug/pnv_php.c:161:2-13: ERROR: probable double put.
+./arch/xtensa/kernel/setup.c:423:24-25: ERROR: iterator variable bound on line 421 cannot be NULL
+./kernel/bpf/btf.c:2883:6-7: ERROR: iterator variable bound on line 2881 cannot be NULL
+./kernel/bpf/btf.c:2378:6-7: ERROR: iterator variable bound on line 2370 cannot be NULL
+./net/bridge/netfilter/ebtables.c:892:11-12: ERROR: iterator variable bound on line 888 cannot be NULL
+./drivers/s390/block/dasd.c:3019:14-17: ERROR: iterator variable bound on line 3007 cannot be NULL
+./drivers/dma/sh/shdma-base.c:864:7-12: ERROR: iterator variable bound on line 860 cannot be NULL
+./drivers/irqchip/irq-bcm7038-l1.c:444:7-10: ERROR: iterator variable bound on line 441 cannot be NULL
+./arch/mips/kernel/topology.c:23:22-23: ERROR: iterator variable bound on line 20 cannot be NULL
+./arch/x86/kernel/apic/io_apic.c:1211:6-12: ERROR: iterator variable bound on line 1203 cannot be NULL
+./tools/perf/util/header.c:3195:6-9: ERROR: iterator variable bound on line 3194 cannot be NULL
+./include/net/flow_offload.h:316:6-7: ERROR: iterator variable bound on line 315 cannot be NULL
+./drivers/md/bcache/super.c:1676:6-8: ERROR: iterator variable bound on line 1675 cannot be NULL
+./net/bridge/br_mdb.c:34:7-8: ERROR: iterator variable bound on line 33 cannot be NULL
+./tools/perf/builtin-diff.c:1727:24-25: ERROR: iterator variable bound on line 1716 cannot be NULL
+./drivers/net/ethernet/myricom/myri10ge/myri10ge.c:2898:7-11: ERROR: iterator variable bound on line 2893 cannot be NULL
+./drivers/base/firmware_loader/main.c:1274:6-9: ERROR: iterator variable bound on line 1261 cannot be NULL
+./fs/ext4/dir.c:407:9-14: ERROR: iterator variable bound on line 406 cannot be NULL
+./arch/s390/pci/pci_irq.c:404:14-17: ERROR: iterator variable bound on line 396 cannot be NULL
+./arch/x86/kernel/setup_percpu.c:264:7-10: ERROR: iterator variable bound on line 222 cannot be NULL
+./drivers/base/node.c:536:36-37: ERROR: iterator variable bound on line 535 cannot be NULL
+./drivers/net/ethernet/mellanox/mlx5/core/en_tc.c:3969:7-8: ERROR: iterator variable bound on line 3947 cannot be NULL
+./arch/x86/oprofile/nmi_int.c:463:34-37: ERROR: iterator variable bound on line 462 cannot be NULL
+./kernel/irq/spurious.c:129:7-8: ERROR: iterator variable bound on line 128 cannot be NULL
+./kernel/irq/spurious.c:156:7-8: ERROR: iterator variable bound on line 153 cannot be NULL
+./drivers/iio/humidity/am2315.c:176:22-25: ERROR: iterator variable bound on line 174 cannot be NULL
+./drivers/dma/sh/shdmac.c:570:10-15: ERROR: iterator variable bound on line 569 cannot be NULL
+./drivers/scsi/qedf/qedf_main.c:882:6-12: ERROR: iterator variable bound on line 881 cannot be NULL
+./drivers/mailbox/tegra-hsp.c:781:6-8: ERROR: iterator variable bound on line 780 cannot be NULL
+./drivers/gpu/drm/i915/gt/intel_reset.c:899:1-20: iterator with update on line 920
+./fs/btrfs/extent-tree.c:4011:1-20: iterator with update on line 4080
+./drivers/spi/spi-fsi.c:404:1-20: iterator with update on line 466
+./net/bluetooth/l2cap_core.c:6073:1-20: iterator with update on line 6105
+./drivers/gpu/drm/ttm/ttm_execbuf_util.c:93:1-20: iterator with update on line 99
+./drivers/block/drbd/drbd_debugfs.c:311:1-20: iterator with update on line 325
+./drivers/gpu/drm/amd/amdgpu/amdgpu_vm.c:3129:38-45: ERROR: invalid reference to the index variable of the iterator on line 3108
+./drivers/gpu/drm/nouveau/nvkm/engine/disp/nv50.c:537:43-47: ERROR: invalid reference to the index variable of the iterator on line 532
+./drivers/net/wireless/ath/ath6kl/htc_mbox.c:107:32-43: ERROR: invalid reference to the index variable of the iterator on line 64
+./drivers/gpu/drm/gma500/oaktrail_lvds.c:120:6-15: ERROR: invalid reference to the index variable of the iterator on line 115
+./drivers/gpu/drm/i915/gem/selftests/i915_gem_mman.c:714:27-31: ERROR: invalid reference to the index variable of the iterator on line 625
+./drivers/staging/media/atomisp/pci/atomisp_acc.c:506:6-12: ERROR: invalid reference to the index variable of the iterator on line 461
+./drivers/usb/gadget/legacy/hid.c:196:11-12: ERROR: invalid reference to the index variable of the iterator on line 145
+./fs/dlm/recover.c:803:18-21: ERROR: invalid reference to the index variable of the iterator on line 771
+./kernel/exit.c:389:21-22: ERROR: invalid reference to the index variable of the iterator on line 378
+./drivers/gpu/drm/virtio/virtgpu_ioctl.c:474:7-16: ERROR: invalid reference to the index variable of the iterator on line 463
+./sound/soc/soc-dapm.c:1987:29-30: ERROR: invalid reference to the index variable of the iterator on line 1983
+./drivers/gpu/drm/gma500/mdfld_intel_display.c:758:33-42: ERROR: invalid reference to the index variable of the iterator on line 696
+./drivers/infiniband/core/cma.c:768:29-36: ERROR: invalid reference to the index variable of the iterator on line 748
+./drivers/scsi/mpt3sas/mpt3sas_transport.c:800:6-18: ERROR: invalid reference to the index variable of the iterator on line 777
+./drivers/scsi/storvsc_drv.c:670:42-49: ERROR: invalid reference to the index variable of the iterator on line 659
+./kernel/trace/trace_events.c:1532:21-23: ERROR: invalid reference to the index variable of the iterator on line 1509
+./kernel/trace/trace_events.c:1529:10-13: ERROR: invalid reference to the index variable of the iterator on line 1510
+./drivers/gpu/drm/gma500/oaktrail_crtc.c:427:33-42: ERROR: invalid reference to the index variable of the iterator on line 394
+./arch/powerpc/kernel/eeh_driver.c:1050:31-35: ERROR: invalid reference to the index variable of the iterator on line 1038
+./arch/powerpc/kernel/eeh_driver.c:1107:30-34: ERROR: invalid reference to the index variable of the iterator on line 1038
+./arch/powerpc/sysdev/fsl_gtm.c:106:5-8: ERROR: invalid reference to the index variable of the iterator on line 92
+./drivers/dma/dw-edma/dw-edma-core.c:134:7-12: ERROR: invalid reference to the index variable of the iterator on line 127
+./drivers/dma/dw-edma/dw-edma-core.c:154:7-12: ERROR: invalid reference to the index variable of the iterator on line 146
+./drivers/misc/ocxl/link.c:440:32-36: ERROR: invalid reference to the index variable of the iterator on line 430
+./drivers/net/ethernet/intel/i40e/i40e_ethtool.c:3867:32-37: ERROR: invalid reference to the index variable of the iterator on line 3821
+./drivers/scsi/lpfc/lpfc_scsi.c:5702:17-27: ERROR: function lpfc_create_device_data called on line 5932 inside lock on line 5918 but uses GFP_KERNEL
+./drivers/infiniband/core/cm.c:882:19-29: ERROR: function cm_finalize_id called on line 2198 inside lock on line 2197 but uses GFP_KERNEL
+./mm/page_alloc.c:5785:46-56: ERROR: function local_memory_node called on line 5890 inside lock on line 5861 but uses GFP_KERNEL
+./mm/page_alloc.c:5786:16-26: ERROR: function local_memory_node called on line 5890 inside lock on line 5861 but uses GFP_KERNEL
+./fs/proc/inode.c:266:1-10: second lock on line 271
+./fs/proc/inode.c:271:2-11: second lock on line 271
+./drivers/block/drbd/drbd_receiver.c:1091:2-12: second lock on line 1091
+./fs/dcache.c:1046:1-10: second lock on line 1046
+./fs/dcache.c:1048:2-11: second lock on line 1048
+./fs/fs-writeback.c:1675:2-11: second lock on line 1745
+./fs/fs-writeback.c:1538:1-10: second lock on line 1575
+./fs/fuse/dev.c:262:2-11: second lock on line 262
+./fs/super.c:855:1-10: second lock on line 855
+./fs/super.c:595:1-10: second lock on line 595
+./fs/super.c:521:1-10: second lock on line 521
+./fs/btrfs/extent-tree.c:2018:2-11: second lock on line 2018
+./fs/ntfs/compress.c:697:1-10: second lock on line 697
+./fs/orangefs/devorangefs-req.c:195:2-11: second lock on line 195
+./fs/xfs/xfs_trans.c:791:3-12: second lock on line 791
+./fs/xfs/xfs_trans.c:791:3-12: second lock on line 814
+./mm/slub.c:2244:3-12: second lock on line 2244
+./mm/slub.c:2244:3-12: second lock on line 2255
+./mm/slub.c:2255:3-12: second lock on line 2244
+./mm/slub.c:2255:3-12: second lock on line 2255
+./fs/jbd2/transaction.c:370:1-10: second lock on line 370
+./fs/jffs2/erase.c:106:1-11: second lock on line 150
+./fs/jffs2/erase.c:150:2-12: second lock on line 150
+./fs/jffs2/erase.c:108:1-10: second lock on line 151
+./fs/jffs2/erase.c:151:2-11: second lock on line 151
+./tools/testing/selftests/powerpc/benchmarks/context_switch.c:363:2-12: second lock on line 363
+./tools/testing/selftests/powerpc/benchmarks/context_switch.c:376:2-12: second lock on line 376
+./fs/notify/fanotify/fanotify_user.c:522:4-13: second lock on line 522
+./fs/notify/fanotify/fanotify_user.c:522:4-13: second lock on line 527
+./fs/notify/fanotify/fanotify_user.c:588:1-10: second lock on line 596
+./fs/notify/fanotify/fanotify_user.c:588:1-10: second lock on line 615
+./fs/notify/fanotify/fanotify_user.c:596:2-11: second lock on line 596
+./fs/notify/fanotify/fanotify_user.c:596:2-11: second lock on line 615
+./fs/notify/fanotify/fanotify_user.c:615:2-11: second lock on line 615
+./kernel/locking/mutex.c:968:1-10: second lock on line 1057
+./kernel/locking/mutex.c:1055:2-11: second lock on line 1057
+./drivers/gpu/drm/ttm/ttm_bo.c:507:1-10: second lock on line 531
+./drivers/gpu/drm/ttm/ttm_bo.c:521:3-12: second lock on line 531
+./drivers/gpu/drm/ttm/ttm_bo.c:531:2-11: second lock on line 531
+./fs/inode.c:827:2-11: second lock on line 827
+./fs/inode.c:858:2-11: second lock on line 858
+./drivers/char/ipmi/ipmi_msghandler.c:4534:2-19: ERROR: nested lock+irqsave that reuses flags from line 4527.
+./arch/powerpc/platforms/cell/spufs/inode.c:456:1-7: preceding lock on line 430
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 757
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 834
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 757
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 834
+./drivers/base/power/runtime.c:662:1-7: preceding lock on line 587
+./drivers/base/power/runtime.c:662:1-7: preceding lock on line 587
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 773
+./drivers/base/power/runtime.c:877:1-7: preceding lock on line 773
+./drivers/base/power/runtime.c:662:1-7: preceding lock on line 602
+./drivers/base/power/runtime.c:662:1-7: preceding lock on line 602
+./drivers/devfreq/devfreq.c:910:1-7: preceding lock on line 777
+./drivers/gpu/drm/amd/powerplay/amdgpu_smu.c:1556:1-7: preceding lock on line 1532
+./drivers/gpu/drm/drm_file.c:451:1-7: preceding lock on line 422
+./drivers/gpu/drm/nouveau/nvkm/engine/fifo/base.c:115:3-9: preceding lock on line 109
+./drivers/gpu/drm/nouveau/nvkm/engine/fifo/base.c:98:2-8: preceding lock on line 95
+./drivers/gpu/drm/ttm/ttm_bo.c:1802:2-8: preceding lock on line 1774
+./drivers/gpu/drm/ttm/ttm_bo.c:832:2-8: preceding lock on line 784
+./drivers/md/bcache/alloc.c:388:1-7: preceding lock on line 322
+./drivers/md/bcache/alloc.c:388:1-7: preceding lock on line 341
+./drivers/md/bcache/journal.c:876:3-9: preceding lock on line 865
+./drivers/md/bcache/journal.c:876:3-9: preceding lock on line 865
+./drivers/md/bcache/journal.c:876:3-9: preceding lock on line 905
+./drivers/media/dvb-core/dvb_frontend.c:2848:1-7: preceding lock on line 2737
+./drivers/media/dvb-core/dvb_frontend.c:2848:1-7: preceding lock on line 2760
+./drivers/media/dvb-frontends/stv090x.c:799:1-7: preceding lock on line 768
+./drivers/media/rc/imon.c:1164:1-7: preceding lock on line 1150
+./drivers/media/usb/cpia2/cpia2_v4l.c:181:3-9: preceding lock on line 193
+./drivers/media/usb/cpia2/cpia2_v4l.c:186:3-9: preceding lock on line 193
+./drivers/media/usb/cpia2/cpia2_v4l.c:195:3-9: preceding lock on line 193
+./drivers/media/usb/cpia2/cpia2_v4l.c:197:3-9: preceding lock on line 193
+./drivers/scsi/libsas/sas_port.c:137:2-8: preceding lock on line 109
+./drivers/scsi/libsas/sas_port.c:137:2-8: preceding lock on line 123
+./drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c:925:2-8: preceding lock on line 869
+./fs/f2fs/checkpoint.c:1640:1-7: preceding lock on line 1569
+./fs/file.c:208:2-8: preceding lock on line 218
+./fs/file.c:212:2-8: preceding lock on line 218
+./fs/fuse/dev.c:1228:2-8: preceding lock on line 1207
+./fs/fuse/dev.c:1233:3-9: preceding lock on line 1207
+./ipc/sem.c:425:3-9: preceding lock on line 420
+./arch/mips/kernel/perf_event_mipsxx.c:1563:2-8: preceding lock on line 1553
+./drivers/md/dm-crypt.c:1659:1-7: preceding lock on line 1623
+./drivers/media/pci/ivtv/ivtv-fileops.c:223:4-10: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:230:3-9: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:236:4-10: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:245:3-9: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:251:3-9: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:257:3-9: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:272:3-9: preceding lock on line 267
+./drivers/media/pci/ivtv/ivtv-fileops.c:598:4-10: preceding lock on line 627
+./drivers/media/pci/ivtv/ivtv-fileops.c:598:4-10: preceding lock on line 689
+./drivers/media/pci/ivtv/ivtv-fileops.c:606:3-9: preceding lock on line 627
+./drivers/media/pci/ivtv/ivtv-fileops.c:606:3-9: preceding lock on line 689
+./drivers/media/pci/ivtv/ivtv-fileops.c:648:3-9: preceding lock on line 627
+./drivers/media/pci/ivtv/ivtv-fileops.c:648:3-9: preceding lock on line 689
+./drivers/media/pci/ivtv/ivtv-fileops.c:692:4-10: preceding lock on line 689
+./drivers/misc/habanalabs/gaudi/gaudi.c:5291:1-7: preceding lock on line 5243
+./drivers/misc/mic/scif/scif_api.c:133:2-8: preceding lock on line 113
+./drivers/net/ethernet/neterion/vxge/vxge-config.c:218:1-7: preceding lock on line 166
+./drivers/net/macsec.c:1659:1-7: preceding lock on line 1638
+./drivers/scsi/cxlflash/superpipe.c:588:1-7: preceding lock on line 570
+./drivers/staging/rtl8192u/ieee80211/ieee80211_softmac_wx.c:374:2-8: preceding lock on line 364
+./drivers/usb/chipidea/udc.c:986:2-8: preceding lock on line 984
+./drivers/vfio/pci/vfio_pci.c:1472:3-9: preceding lock on line 1457
+./fs/btrfs/block-group.c:625:1-7: preceding lock on line 565
+./fs/dcache.c:718:2-8: preceding lock on line 710
+./fs/dcache.c:718:2-8: preceding lock on line 711
+./fs/dcache.c:1098:2-8: preceding lock on line 1087
+./fs/dcache.c:1098:2-8: preceding lock on line 1088
+./fs/dcache.c:1109:2-8: preceding lock on line 1087
+./fs/dcache.c:1109:2-8: preceding lock on line 1101
+./fs/dcache.c:1114:1-7: preceding lock on line 1087
+./fs/dcache.c:1114:1-7: preceding lock on line 1088
+./fs/erofs/zdata.c:940:1-7: preceding lock on line 781
+./fs/fs-writeback.c:2351:3-9: preceding lock on line 2281
+./fs/fs-writeback.c:310:3-9: preceding lock on line 305
+./lib/lockref.c:132:2-8: preceding lock on line 130
+./lib/lockref.c:176:2-8: preceding lock on line 174
+./mm/hugetlb.c:4161:2-8: preceding lock on line 4199
+./mm/hugetlb.c:518:3-9: preceding lock on line 491
+./mm/hugetlb.c:568:2-8: preceding lock on line 558
+./sound/core/oss/pcm_oss.c:1229:3-9: preceding lock on line 1223
+./drivers/block/drbd/drbd_state.c:2374:1-7: preceding lock on line 2311
+./drivers/block/drbd/drbd_state.c:635:1-7: preceding lock on line 575
+./drivers/block/drbd/drbd_state.c:2374:1-7: preceding lock on line 2329
+./drivers/block/null_blk_main.c:938:2-8: preceding lock on line 975
+./drivers/infiniband/core/cma.c:3165:2-8: preceding lock on line 3130
+./drivers/infiniband/core/cma.c:2023:2-8: preceding lock on line 1954
+./drivers/infiniband/core/cma.c:4362:2-8: preceding lock on line 4310
+./drivers/infiniband/core/cma.c:2338:2-8: preceding lock on line 2290
+./drivers/infiniband/core/cma.c:3832:2-8: preceding lock on line 3783
+./drivers/infiniband/sw/siw/siw_qp_rx.c:405:1-7: preceding lock on line 340
+./drivers/infiniband/ulp/iser/iscsi_iser.c:221:1-7: preceding lock on line 194
+./drivers/input/mouse/psmouse-base.c:1923:3-9: preceding lock on line 1928
+./drivers/input/mouse/psmouse-base.c:1932:3-9: preceding lock on line 1928
+./drivers/input/mouse/psmouse-base.c:1937:3-9: preceding lock on line 1928
+./drivers/media/pci/ivtv/ivtv-ioctl.c:1790:4-10: preceding lock on line 1802
+./drivers/media/pci/ivtv/ivtv-ioctl.c:1792:4-10: preceding lock on line 1802
+./drivers/media/pci/ivtv/ivtv-ioctl.c:1806:4-10: preceding lock on line 1802
+./drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c:3865:1-7: preceding lock on line 3770
+./drivers/scsi/mvsas/mv_sas.c:1221:1-7: preceding lock on line 1184
+./drivers/usb/gadget/udc/dummy_hcd.c:1512:1-7: preceding lock on line 1498
+./drivers/usb/usbip/vudc_transfer.c:299:1-7: preceding lock on line 285
+./drivers/video/fbdev/smscufx.c:1604:1-7: preceding lock on line 1488
+./fs/btrfs/extent-tree.c:3369:3-9: preceding lock on line 3365
+./fs/btrfs/extent-tree.c:3369:3-9: preceding lock on line 3387
+./fs/btrfs/extent-tree.c:3372:3-9: preceding lock on line 3365
+./fs/btrfs/extent-tree.c:3372:3-9: preceding lock on line 3387
+./fs/btrfs/extent-tree.c:3377:3-9: preceding lock on line 3365
+./fs/btrfs/extent-tree.c:3377:3-9: preceding lock on line 3387
+./fs/btrfs/extent-tree.c:3380:3-9: preceding lock on line 3365
+./fs/btrfs/extent-tree.c:3380:3-9: preceding lock on line 3387
+./fs/btrfs/extent-tree.c:3389:3-9: preceding lock on line 3387
+./mm/slub.c:3036:2-8: preceding lock on line 3010
+./net/rds/tcp_listen.c:221:1-7: preceding lock on line 186
+./arch/x86/mm/pat/set_memory.c:1684:1-7: preceding lock on line 1658
+./drivers/bus/fsl-mc/mc-sys.c:294:1-7: preceding lock on line 256
+./drivers/gpu/drm/nouveau/nouveau_abi16.c:76:2-8: preceding lock on line 74
+./drivers/hwmon/w83781d.c:1181:1-7: preceding lock on line 1102
+./drivers/iio/light/opt3001.c:735:1-7: preceding lock on line 693
+./drivers/infiniband/hw/cxgb4/qp.c:1615:2-8: preceding lock on line 1607
+./drivers/infiniband/hw/mlx5/mr.c:280:3-9: preceding lock on line 288
+./drivers/infiniband/hw/mlx5/mr.c:291:5-11: preceding lock on line 288
+./drivers/scsi/cxlflash/vlun.c:1161:1-7: preceding lock on line 1128
+./drivers/scsi/dpt_i2o.c:2185:1-7: preceding lock on line 2098
+./drivers/scsi/dpt_i2o.c:2477:1-7: preceding lock on line 2469
+./fs/btrfs/volumes.c:2722:1-7: preceding lock on line 2524
+./fs/btrfs/volumes.c:3136:1-7: preceding lock on line 3088
+./fs/btrfs/volumes.c:4754:1-7: preceding lock on line 4639
+./arch/powerpc/platforms/powernv/opal.c:497:1-7: preceding lock on line 455
+./block/blk-cgroup.c:677:1-7: preceding lock on line 615
+./block/blk-cgroup.c:677:1-7: preceding lock on line 652
+./drivers/media/usb/go7007/go7007-i2c.c:125:1-7: preceding lock on line 61
+./drivers/message/fusion/mptctl.c:2309:1-7: preceding lock on line 2168
+./drivers/mmc/host/sdhci.c:1710:3-9: preceding lock on line 1719
+./drivers/mmc/host/sdhci.c:1723:3-9: preceding lock on line 1719
+./drivers/mmc/host/sdhci.c:1726:3-9: preceding lock on line 1719
+./drivers/mtd/lpddr/lpddr_cmds.c:224:4-10: preceding lock on line 216
+./drivers/mtd/lpddr/lpddr_cmds.c:263:1-7: preceding lock on line 216
+./drivers/mtd/lpddr/lpddr_cmds.c:263:1-7: preceding lock on line 226
+./drivers/mtd/lpddr/lpddr_cmds.c:263:1-7: preceding lock on line 248
+./drivers/net/ethernet/netronome/nfp/nfpcore/nfp_cppcore.c:898:1-7: preceding lock on line 839
+./drivers/net/ethernet/sfc/ef10_sriov.c:664:1-7: preceding lock on line 580
+./drivers/net/ethernet/sfc/ef10_sriov.c:684:1-7: preceding lock on line 580
+./drivers/net/ethernet/sfc/mcdi_filters.c:549:1-7: preceding lock on line 380
+./drivers/regulator/ab8500.c:371:1-7: preceding lock on line 309
+./drivers/scsi/aacraid/commsup.c:615:4-10: preceding lock on line 594
+./drivers/scsi/aacraid/commsup.c:617:3-9: preceding lock on line 594
+./drivers/scsi/aacraid/commsup.c:619:2-8: preceding lock on line 594
+./drivers/scsi/aacraid/commsup.c:630:2-8: preceding lock on line 594
+./drivers/scsi/aacraid/commsup.c:755:2-8: preceding lock on line 745
+./drivers/scsi/csiostor/csio_hw.c:1054:1-7: preceding lock on line 982
+./drivers/scsi/gdth.c:2505:8-14: preceding lock on line 2497
+./drivers/scsi/gdth.c:2589:12-18: preceding lock on line 2497
+./drivers/scsi/gdth.c:2599:12-18: preceding lock on line 2497
+./drivers/scsi/gdth.c:2612:12-18: preceding lock on line 2497
+./drivers/scsi/gdth.c:2618:12-18: preceding lock on line 2497
+./fs/gfs2/glock.c:394:6-12: preceding lock on line 391
+./fs/gfs2/glock.c:941:2-8: preceding lock on line 909
+./fs/inode.c:840:1-7: preceding lock on line 827
+./fs/inode.c:871:1-7: preceding lock on line 858
+./fs/inode.c:1561:3-9: preceding lock on line 1548
+./fs/jbd2/checkpoint.c:132:3-9: preceding lock on line 129
+./fs/jffs2/nodemgmt.c:686:2-8: preceding lock on line 613
+./fs/jffs2/nodemgmt.c:748:2-8: preceding lock on line 613
+./fs/jffs2/nodemgmt.c:209:1-7: preceding lock on line 83
+./fs/jffs2/nodemgmt.c:391:4-10: preceding lock on line 418
+./fs/jffs2/nodemgmt.c:391:4-10: preceding lock on line 431
+./fs/jffs2/nodemgmt.c:434:4-10: preceding lock on line 431
+./fs/jffs2/nodemgmt.c:455:3-9: preceding lock on line 418
+./fs/jffs2/nodemgmt.c:455:3-9: preceding lock on line 431
+./fs/jffs2/nodemgmt.c:485:1-7: preceding lock on line 418
+./fs/jffs2/nodemgmt.c:485:1-7: preceding lock on line 431
+./fs/nfs/callback_proc.c:487:1-7: preceding lock on line 480
+./fs/nfs/client.c:304:4-10: preceding lock on line 302
+./fs/ntfs/mft.c:158:2-8: preceding lock on line 154
+./fs/ubifs/journal.c:829:1-7: preceding lock on line 753
+./kernel/exit.c:1474:1-7: preceding lock on line 1446
+./kernel/signal.c:2142:3-9: preceding lock on line 2140
+./net/core/pktgen.c:3075:1-7: preceding lock on line 3068
+./net/ipv4/tcp_ipv4.c:2254:3-9: preceding lock on line 2238
+./net/netfilter/nf_conntrack_core.c:97:2-8: preceding lock on line 91
+./net/smc/af_smc.c:724:2-8: preceding lock on line 714
+./net/smc/af_smc.c:736:2-8: preceding lock on line 714
+./net/smc/af_smc.c:645:3-9: preceding lock on line 620
+./net/smc/af_smc.c:652:2-8: preceding lock on line 620
+./net/smc/af_smc.c:659:2-8: preceding lock on line 620
+./net/smc/af_smc.c:667:3-9: preceding lock on line 620
+./net/smc/af_smc.c:671:3-9: preceding lock on line 620
+./net/smc/af_smc.c:678:2-8: preceding lock on line 620
+./net/smc/af_smc.c:689:3-9: preceding lock on line 620
+./net/unix/af_unix.c:2185:1-7: preceding lock on line 2099
+./drivers/block/drbd/drbd_nl.c:3625:2-8: preceding lock on line 3545
+./drivers/block/drbd/drbd_nl.c:3626:1-7: preceding lock on line 3545
+./drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c:294:1-7: preceding lock on line 245
+./drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c:294:1-7: preceding lock on line 249
+./drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c:294:1-7: preceding lock on line 254
+./drivers/gpu/drm/drm_drv.c:983:1-7: preceding lock on line 941
+./drivers/gpu/drm/drm_fb_helper.c:1926:2-8: preceding lock on line 1922
+./drivers/hwmon/lm78.c:627:1-7: preceding lock on line 589
+./drivers/mtd/chips/cfi_cmdset_0001.c:981:4-10: preceding lock on line 973
+./drivers/mtd/chips/cfi_cmdset_0001.c:1019:1-7: preceding lock on line 973
+./drivers/mtd/chips/cfi_cmdset_0001.c:1019:1-7: preceding lock on line 983
+./drivers/mtd/chips/cfi_cmdset_0001.c:1019:1-7: preceding lock on line 1005
+./drivers/mtd/chips/cfi_cmdset_0001.c:1184:5-11: preceding lock on line 1217
+./drivers/mtd/chips/cfi_cmdset_0001.c:1184:5-11: preceding lock on line 1225
+./drivers/mtd/ubi/wl.c:2062:3-9: preceding lock on line 2060
+./drivers/net/ethernet/mellanox/mlx4/port.c:338:1-7: preceding lock on line 204
+./drivers/net/ethernet/mellanox/mlx4/port.c:737:1-7: preceding lock on line 599
+./drivers/net/ethernet/mellanox/mlx4/port.c:532:1-7: preceding lock on line 490
+./drivers/net/tun.c:1805:3-9: preceding lock on line 1788
+./drivers/net/tun.c:1823:3-9: preceding lock on line 1788
+./drivers/net/tun.c:1835:2-8: preceding lock on line 1788
+./drivers/net/tun.c:1853:4-10: preceding lock on line 1788
+./drivers/net/tun.c:1900:4-10: preceding lock on line 1788
+./drivers/net/wireless/ti/wlcore/main.c:2382:1-7: preceding lock on line 2352
+./drivers/scsi/BusLogic.c:3065:3-9: preceding lock on line 3060
+./drivers/scsi/BusLogic.c:3190:2-8: preceding lock on line 3060
+./drivers/scsi/lpfc/lpfc_scsi.c:4918:1-7: preceding lock on line 4777
+./drivers/staging/rtl8192e/rtllib_softmac_wx.c:431:2-8: preceding lock on line 421
+./drivers/staging/wfx/hif_tx.c:83:2-8: preceding lock on line 66
+./drivers/staging/wfx/hif_tx.c:83:2-8: preceding lock on line 68
+./drivers/usb/musb/cppi_dma.c:1163:2-8: preceding lock on line 1153
+./drivers/vfio/vfio.c:370:3-9: preceding lock on line 363
+./drivers/vfio/vfio.c:377:2-8: preceding lock on line 363
+./drivers/vfio/vfio.c:387:2-8: preceding lock on line 363
+./drivers/xen/xenbus/xenbus_comms.c:261:4-10: preceding lock on line 243
+./drivers/xen/xenbus/xenbus_comms.c:274:3-9: preceding lock on line 243
+./drivers/xen/xenbus/xenbus_comms.c:290:2-8: preceding lock on line 243
+./fs/btrfs/qgroup.c:2894:1-7: preceding lock on line 2713
+./fs/xfs/xfs_log.c:3238:2-8: preceding lock on line 3193
+./fs/xfs/xfs_log.c:3173:2-8: preceding lock on line 3120
+./fs/xfs/xfs_log.c:269:1-7: preceding lock on line 260
+./kernel/audit_tree.c:468:2-8: preceding lock on line 465
+./kernel/cgroup/cgroup.c:5952:2-8: preceding lock on line 5941
+./kernel/futex.c:2490:1-7: preceding lock on line 2472
+./kernel/trace/trace.c:6218:3-9: preceding lock on line 6237
+./kernel/trace/trace.c:6240:3-9: preceding lock on line 6237
+./mm/migrate.c:833:1-7: preceding lock on line 783
+./mm/percpu.c:1850:1-7: preceding lock on line 1732
+./mm/percpu.c:1874:1-7: preceding lock on line 1732
+./net/ipv6/mcast.c:457:1-7: preceding lock on line 380
+./net/sunrpc/rpc_pipe.c:1229:2-8: preceding lock on line 1227
+./sound/pci/cs46xx/cs46xx_lib.c:1154:3-9: preceding lock on line 1095
+./arch/hexagon/kernel/traps.c:203:2-8: preceding lock on line 197
+./arch/ia64/kernel/unwind.c:1219:2-8: preceding lock on line 1216
+./drivers/misc/mei/hw-me.c:940:1-7: preceding lock on line 904
+./drivers/misc/mei/hw-me.c:761:2-8: preceding lock on line 750
+./drivers/misc/mei/hw-me.c:777:1-7: preceding lock on line 750
+./drivers/mtd/chips/cfi_cmdset_0002.c:968:3-9: preceding lock on line 901
+./drivers/mtd/chips/cfi_cmdset_0002.c:968:3-9: preceding lock on line 977
+./drivers/mtd/chips/cfi_cmdset_0002.c:1094:5-11: preceding lock on line 1119
+./drivers/mtd/chips/cfi_cmdset_0002.c:1094:5-11: preceding lock on line 1127
+./drivers/net/ethernet/amd/pcnet32.c:705:3-9: preceding lock on line 700
+./drivers/net/wireless/broadcom/b43/main.c:4331:2-8: preceding lock on line 4364
+./drivers/net/wireless/broadcom/b43/main.c:4342:2-8: preceding lock on line 4338
+./drivers/net/wireless/broadcom/b43/main.c:4367:2-8: preceding lock on line 4364
+./drivers/virt/vboxguest/vboxguest_linux.c:445:2-8: preceding lock on line 437
+./fs/dlm/lock.c:1047:1-7: preceding lock on line 946
+./fs/kernfs/file.c:197:2-8: preceding lock on line 193
+./fs/kernfs/file.c:235:1-7: preceding lock on line 193
+./fs/kernfs/file.c:294:2-8: preceding lock on line 290
+./fs/kernfs/file.c:330:1-7: preceding lock on line 290
+./net/bridge/netfilter/ebtables.c:319:3-9: preceding lock on line 316
+./net/netfilter/x_tables.c:1209:3-9: preceding lock on line 1206
+./net/netfilter/x_tables.c:1241:3-9: preceding lock on line 1206
+./net/netfilter/x_tables.c:1241:3-9: preceding lock on line 1231
+./net/rds/ib_cm.c:933:1-7: preceding lock on line 878
+./net/rds/rdma_transport.c:177:1-7: preceding lock on line 69
+./drivers/atm/he.c:1798:1-7: preceding lock on line 1770
+./drivers/dma/mic_x100_dma.c:329:2-8: preceding lock on line 326
+./drivers/dma/mic_x100_dma.c:314:2-8: preceding lock on line 311
+./drivers/md/bcache/btree.c:1492:1-7: preceding lock on line 1367
+./drivers/net/ethernet/ti/tlan.c:257:2-8: preceding lock on line 252
+./drivers/pinctrl/nomadik/pinctrl-nomadik.c:1626:1-7: preceding lock on line 1562
+./drivers/scsi/NCR5380.c:1943:6-12: preceding lock on line 1941
+./drivers/scsi/NCR5380.c:1977:5-11: preceding lock on line 1941
+./drivers/scsi/NCR5380.c:1977:5-11: preceding lock on line 2004
+./drivers/scsi/NCR5380.c:1019:2-8: preceding lock on line 1011
+./drivers/scsi/NCR5380.c:1068:2-8: preceding lock on line 1059
+./drivers/scsi/NCR5380.c:1224:2-8: preceding lock on line 1011
+./drivers/scsi/NCR5380.c:1224:2-8: preceding lock on line 1059
+./drivers/scsi/NCR5380.c:1226:1-7: preceding lock on line 1011
+./drivers/scsi/NCR5380.c:1226:1-7: preceding lock on line 1059
+./drivers/scsi/sg.c:259:4-10: preceding lock on line 256
+./drivers/scsi/sg.c:261:4-10: preceding lock on line 256
+./drivers/scsi/sg.c:272:4-10: preceding lock on line 269
+./drivers/scsi/sg.c:274:4-10: preceding lock on line 269
+./drivers/soundwire/stream.c:860:1-7: preceding lock on line 772
+./drivers/video/fbdev/udlfb.c:1421:1-7: preceding lock on line 1292
+./fs/btrfs/free-space-cache.c:283:1-7: preceding lock on line 245
+./fs/btrfs/free-space-cache.c:2263:1-7: preceding lock on line 2247
+./fs/btrfs/free-space-cache.c:1013:1-7: preceding lock on line 961
+./fs/btrfs/free-space-cache.c:1013:1-7: preceding lock on line 961
+./fs/btrfs/free-space-cache.c:1013:1-7: preceding lock on line 986
+./fs/ocfs2/dlm/dlmdomain.c:1320:1-7: preceding lock on line 1294
+./fs/ocfs2/suballoc.c:2430:2-8: preceding lock on line 2413
+./fs/super.c:863:3-9: preceding lock on line 855
+./fs/super.c:608:3-9: preceding lock on line 595
+./fs/super.c:564:1-7: preceding lock on line 521
+./kernel/time/posix-timers.c:631:3-9: preceding lock on line 628
+./lib/dec_and_lock.c:30:2-8: preceding lock on line 28
+./lib/dec_and_lock.c:47:2-8: preceding lock on line 45
+./mm/swapfile.c:928:1-7: preceding lock on line 817
+./mm/swapfile.c:928:1-7: preceding lock on line 830
+./mm/swapfile.c:928:1-7: preceding lock on line 859
+./mm/swapfile.c:928:1-7: preceding lock on line 892
+./mm/swapfile.c:928:1-7: preceding lock on line 934
+./mm/swapfile.c:928:1-7: preceding lock on line 939
+./mm/swapfile.c:928:1-7: preceding lock on line 951
+./mm/swapfile.c:928:1-7: preceding lock on line 956
+./mm/swapfile.c:970:1-7: preceding lock on line 817
+./mm/swapfile.c:970:1-7: preceding lock on line 830
+./mm/swapfile.c:970:1-7: preceding lock on line 859
+./mm/swapfile.c:970:1-7: preceding lock on line 892
+./mm/swapfile.c:970:1-7: preceding lock on line 934
+./mm/swapfile.c:970:1-7: preceding lock on line 939
+./mm/swapfile.c:970:1-7: preceding lock on line 951
+./mm/swapfile.c:970:1-7: preceding lock on line 956
+./drivers/clk/nxp/clk-lpc32xx.c:187:49-50: WARNING: Use ARRAY_SIZE
+./samples/bpf/test_cgrp2_attach.c:72:31-32: WARNING: Use ARRAY_SIZE
+./samples/bpf/test_lru_dist.c:527:33-34: WARNING: Use ARRAY_SIZE
+./samples/seccomp/bpf-direct.c:146:39-40: WARNING: Use ARRAY_SIZE
+./scripts/asn1_compiler.c:443:28-29: WARNING: Use ARRAY_SIZE
+./scripts/mod/sumversion.c:219:48-49: WARNING: Use ARRAY_SIZE
+./scripts/mod/sumversion.c:156:48-49: WARNING: Use ARRAY_SIZE
+./tools/perf/util/trace-event-parse.c:209:35-36: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/progs/test_rdonly_maps.c:67:31-32: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:778:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:844:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:999:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:1095:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:958:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:1057:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sock_addr.c:886:44-45: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/hwtstamp_config.c:53:41-42: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/hwtstamp_config.c:74:45-46: WARNING: Use ARRAY_SIZE
+./tools/usb/usbip/src/usbipd.c:536:19-20: WARNING: Use ARRAY_SIZE
+./arch/s390/tools/gen_opcode_table.c:141:39-40: WARNING: Use ARRAY_SIZE
+./tools/perf/tests/demangle-java-test.c:31:34-35: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/psock_lib.h:66:33-34: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/x86/test_vdso.c:267:46-47: WARNING: Use ARRAY_SIZE
+./arch/powerpc/xmon/ppc-opc.c:957:67-68: WARNING: Use ARRAY_SIZE
+./arch/powerpc/xmon/ppc-opc.c:7280:24-25: WARNING: Use ARRAY_SIZE
+./arch/powerpc/xmon/ppc-opc.c:6972:25-26: WARNING: Use ARRAY_SIZE
+./arch/powerpc/xmon/ppc-opc.c:7211:21-22: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/cgroup_attach_autodetach.c:17:31-32: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/proc/proc-pid-vm.c:371:26-27: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/proc/proc-pid-vm.c:420:26-27: WARNING: Use ARRAY_SIZE
+./samples/bpf/fds_example.c:61:32-33: WARNING: Use ARRAY_SIZE
+./samples/seccomp/dropper.c:42:39-40: WARNING: Use ARRAY_SIZE
+./tools/bpf/bpftool/prog.c:1533:28-29: WARNING: Use ARRAY_SIZE
+./tools/perf/arch/x86/util/dwarf-regs.c:92:46-47: WARNING: Use ARRAY_SIZE
+./tools/perf/tests/bpf.c:320:22-23: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/cgroup_attach_multi.c:66:31-32: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_lru_map.c:883:33-34: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_lru_map.c:887:34-35: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/psock_fanout.c:107:33-34: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/psock_fanout.c:152:28-29: WARNING: Use ARRAY_SIZE
+./arch/ia64/kernel/perfmon.c:4602:41-42: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:855:34-35: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:862:33-34: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:870:28-29: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:952:34-35: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:959:33-34: WARNING: Use ARRAY_SIZE
+./arch/powerpc/kernel/sysfs.c:967:28-29: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:45:85-86: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:45:85-86: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:68:63-64: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:45:85-86: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:45:85-86: WARNING: Use ARRAY_SIZE
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:68:63-64: WARNING: Use ARRAY_SIZE
+./drivers/staging/fbtft/fbtft.h:234:50-51: WARNING: Use ARRAY_SIZE
+./samples/seccomp/bpf-fancy.c:83:39-40: WARNING: Use ARRAY_SIZE
+./samples/seccomp/bpf-fancy.c:86:44-45: WARNING: Use ARRAY_SIZE
+./samples/timers/hpet_example.c:64:38-39: WARNING: Use ARRAY_SIZE
+./scripts/genksyms/keywords.c:63:36-37: WARNING: Use ARRAY_SIZE
+./tools/lib/bpf/xsk.c:404:31-32: WARNING: Use ARRAY_SIZE
+./tools/lib/traceevent/event-parse.c:3923:35-36: WARNING: Use ARRAY_SIZE
+./tools/testing/scatterlist/main.c:76:26-27: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/cgroup_attach_override.c:19:31-32: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/global_data.c:32:29-30: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/global_data.c:61:29-30: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/global_data.c:95:29-30: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/prog_tests/obj_name.c:23:29-30: WARNING: Use ARRAY_SIZE
+./arch/powerpc/boot/mktree.c:130:31-32: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/tbfadt.c:107:27-28: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/tbfadt.c:137:30-31: WARNING: Use ARRAY_SIZE
+./samples/bpf/test_map_in_map_user.c:32:35-36: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_cgroup_storage.c:38:31-32: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./drivers/acpi/acpica/rsdumpinfo.c:18:48-49: WARNING: Use ARRAY_SIZE
+./samples/bpf/tracex5_user.c:28:39-40: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/kvm/x86_64/debug_regs.c:155:32-33: WARNING: Use ARRAY_SIZE
+./tools/usb/ffs-aio-example/multibuff/device_app/aio_multibuff.c:299:29-30: WARNING: Use ARRAY_SIZE
+./tools/usb/ffs-aio-example/multibuff/device_app/aio_multibuff.c:327:30-31: WARNING: Use ARRAY_SIZE
+./tools/usb/ffs-aio-example/multibuff/device_app/aio_multibuff.c:367:38-39: WARNING: Use ARRAY_SIZE
+./tools/usb/ffs-aio-example/multibuff/device_app/aio_multibuff.c:372:29-30: WARNING: Use ARRAY_SIZE
+./arch/s390/tools/gen_facilities.c:154:37-38: WARNING: Use ARRAY_SIZE
+./samples/bpf/sock_example.c:61:31-32: WARNING: Use ARRAY_SIZE
+./scripts/dtc/libfdt/fdt_strerror.c:43:43-44: WARNING: Use ARRAY_SIZE
+./tools/perf/arch/riscv/util/dwarf-regs.c:56:54-55: WARNING: Use ARRAY_SIZE
+./tools/power/x86/turbostat/turbostat.c:456:27-28: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sockmap.c:1822:28-29: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/bpf/test_sockmap.c:1742:30-31: WARNING: Use ARRAY_SIZE
+./tools/testing/selftests/net/reuseport_bpf_numa.c:89:28-29: WARNING: Use ARRAY_SIZE
+939 942
+coccicheck failed
+Makefile:1842: recipe for target 'coccicheck' failed
+make: *** [coccicheck] Error 2
