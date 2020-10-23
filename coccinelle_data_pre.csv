@@ -1,0 +1,192 @@
+warning message,line of code,deletion,addition,Metavariable_type,code snippets,label
+./drivers/net/ethernet/sun/sungem.c:2968:19-40: WARNING: casting value returned by memory allocation function to (struct gem_init_block *) is useless.,2968,"gp->init_block = (struct gem_init_block *)
+                 dma_alloc_coherent(&pdev->dev, sizeof(struct gem_init_block),
+                                    &gp->gblock_dvma, GFP_KERNEL);",none,static int gem_init_one(struct pci_dev *," 	/* It is guaranteed that the returned buffer will be at least
+ 	 * PAGE_SIZE aligned.
+ 	 */
+-	gp->init_block = (struct gem_init_block *)
+ 		dma_alloc_coherent(&pdev->dev, sizeof(struct gem_init_block),
+ 				   &gp->gblock_dvma, GFP_KERNEL);
+ 	if (!gp->init_block) {",
+./drivers/scsi/ibmvscsi/ibmvscsi.c:720:26-47: WARNING: casting value returned by memory allocation function to (struct srp_direct_buf *) is useless.,720,"evt_struct->ext_list = (struct srp_direct_buf *)
+ 			dma_alloc_coherent(dev,
+ 					   SG_ALL * sizeof(struct srp_direct_buf),
+ 					   &evt_struct->ext_list_token, 0);",none,static int map_sg_data(struct scsi_cmnd," 	/* get indirect table */
+ 	if (!evt_struct->ext_list) {
+-		evt_struct->ext_list = (struct srp_direct_buf *)
+ 			dma_alloc_coherent(dev,
+ 					   SG_ALL * sizeof(struct srp_direct_buf),
+ 					   &evt_struct->ext_list_token, 0);",
+./drivers/message/fusion/mptctl.c:2596:14-31: WARNING: casting value returned by memory allocation function to (SCSIDevicePage0_t *) is useless.,2596,"pg0_alloc = (SCSIDevicePage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);",none,"mptctl_hp_targetinfo(MPT_ADAPTER *ioc, u","        /* Get the data transfer speeds
+         */
+ 	data_sz = ioc->spi_data.sdp0length * 4;
+-	pg0_alloc = (SCSIDevicePage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);
+ 	if (pg0_alloc) {
+ 		hdr.PageVersion = ioc->spi_data.sdp0version;
+ 		hdr.PageLength = data_sz;",
+./drivers/message/fusion/mptctl.c:2660:15-32: WARNING: casting value returned by memory allocation function to (SCSIDevicePage3_t *) is useless.,2660,"pg3_alloc = (SCSIDevicePage3_t *) pci_alloc_consistent(
+ 							ioc->pcidev, data_sz, &page_dma);",none,"mptctl_hp_targetinfo(MPT_ADAPTER *ioc, u"," 		/* Issue the second config page request */
+ 		cfg.action = MPI_CONFIG_ACTION_PAGE_READ_CURRENT;
+ 		data_sz = (int) cfg.cfghdr.hdr->PageLength * 4;
+-		pg3_alloc = (SCSIDevicePage3_t *) pci_alloc_consistent(
+ 							ioc->pcidev, data_sz, &page_dma);
+ 		if (pg3_alloc) {
+ 			cfg.physAddr = page_dma;",
+./drivers/message/fusion/mptfc.c:766:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage0_t *) is useless.,766,"ppage0_alloc = (FCPortPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);",none,"mptfc_GetFcPortPage0(MPT_ADAPTER *ioc, i"," 
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage0_alloc = (FCPortPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);
+ 	if (ppage0_alloc) {
+ 
+  try_again:",
+./drivers/message/fusion/mptfc.c:907:17-30: WARNING: casting value returned by memory allocation function to (FCPortPage1_t *) is useless.,907,"page1_alloc = (FCPortPage1_t *) pci_alloc_consistent(ioc->pcidev,
+ 						data_sz,
+ 						&page1_dma);",none,start_over:," 		if (data_sz < sizeof(FCPortPage1_t))
+ 			data_sz = sizeof(FCPortPage1_t);
+ 
+-		page1_alloc = (FCPortPage1_t *) pci_alloc_consistent(ioc->pcidev,
+ 						data_sz,
+ 						&page1_dma);
+ 		if (!page1_alloc)",
+./drivers/crypto/cavium/cpt/cptvf_main.c:236:17-19: WARNING: casting value returned by memory allocation function to (u8 *) is useless.,236,"curr->head = (u8 *)dma_alloc_coherent(&pdev->dev,
+ 							      c_size + CPT_NEXT_CHUNK_PTR_SIZE,
+ 							      &curr->dma_addr,
+ 							      GFP_KERNEL);",none,static int alloc_command_queues(struct c," 
+ 			c_size = (rem_q_size > qcsize_bytes) ? qcsize_bytes :
+ 					rem_q_size;
+-			curr->head = (u8 *)dma_alloc_coherent(&pdev->dev,
+ 							      c_size + CPT_NEXT_CHUNK_PTR_SIZE,
+ 							      &curr->dma_addr,
+ 							      GFP_KERNEL);",
+./drivers/net/ethernet/qlogic/qed/qed_rdma.c:1154:6-42: WARNING: casting value returned by memory allocation function to (struct rdma_destroy_cq_output_params *) is useless.,1154,"(struct rdma_destroy_cq_output_params *)
+ 	    dma_alloc_coherent(&p_hwfn->cdev->pdev->dev,
+ 			       sizeof(struct rdma_destroy_cq_output_params),
+ 			       &ramrod_res_phys, GFP_KERNEL);",none,"qed_rdma_destroy_cq(void *rdma_cxt,"," 	DP_VERBOSE(p_hwfn, QED_MSG_RDMA, ""icid = %08x\n"", in_params->icid);
+ 
+ 	p_ramrod_res =
+-	    (struct rdma_destroy_cq_output_params *)
+ 	    dma_alloc_coherent(&p_hwfn->cdev->pdev->dev,
+ 			       sizeof(struct rdma_destroy_cq_output_params),
+ 			       &ramrod_res_phys, GFP_KERNEL);",
+./drivers/nfc/st21nfca/se.c:318:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.,318,"transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 						   skb->len - 2, GFP_KERNEL);",none,int st21nfca_connectivity_event_received," 		    skb->data[0] != NFC_EVT_TRANSACTION_AID_TAG)
+ 			return -EPROTO;
+ 
+-		transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 						   skb->len - 2, GFP_KERNEL);
+ 		if (!transaction)
+ 			return -ENOMEM;",
+./include/rdma/ib_verbs.h:2275:3-17: WARNING: casting value returned by memory allocation function to (struct ib_type *) is useless.,2275,"((struct ib_type *)kzalloc(ib_dev->ops.size_##ib_type, gfp))",none,struct iw_cm_conn_param;," 				      struct ib_struct)))
+ 
+ #define rdma_zalloc_drv_obj_gfp(ib_dev, ib_type, gfp)                         \
+-	((struct ib_type *)kzalloc(ib_dev->ops.size_##ib_type, gfp))
+ 
+ #define rdma_zalloc_drv_obj(ib_dev, ib_type)                                   \
+ 	rdma_zalloc_drv_obj_gfp(ib_dev, ib_type, GFP_KERNEL)",
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:283:24-49: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.,283,"droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 	      vzalloc_node(array_size(droq->max_count, OCT_DROQ_RECVBUF_SIZE),
+ 			   numa_node);",none,int octeon_init_droq(struct octeon_devic," 	dev_dbg(&oct->pci_dev->dev, ""droq[%d]: num_desc: %d\n"", q_no,
+ 		droq->max_count);
+ 
+-	droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 	      vzalloc_node(array_size(droq->max_count, OCT_DROQ_RECVBUF_SIZE),
+ 			   numa_node);
+ 	if (!droq->recv_buf_list)
+-		droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 		      vzalloc(array_size(droq->max_count,
+ 					 OCT_DROQ_RECVBUF_SIZE));
+ 	if (!droq->recv_buf_list) {",
+./drivers/net/ethernet/cavium/liquidio/octeon_droq.c:287:25-50: WARNING: casting value returned by memory allocation function to (struct octeon_recv_buffer *) is useless.,287,"droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 		      vzalloc(array_size(droq->max_count,
+ 					 OCT_DROQ_RECVBUF_SIZE));",none,int octeon_init_droq(struct octeon_devic," 	dev_dbg(&oct->pci_dev->dev, ""droq[%d]: num_desc: %d\n"", q_no,
+ 		droq->max_count);
+ 
+-	droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 	      vzalloc_node(array_size(droq->max_count, OCT_DROQ_RECVBUF_SIZE),
+ 			   numa_node);
+ 	if (!droq->recv_buf_list)
+-		droq->recv_buf_list = (struct octeon_recv_buffer *)
+ 		      vzalloc(array_size(droq->max_count,
+ 					 OCT_DROQ_RECVBUF_SIZE));
+ 	if (!droq->recv_buf_list) {",
+./drivers/message/fusion/mptbase.c:5325:16-29: WARNING: casting value returned by memory allocation function to (IOUnitPage2_t *) is useless.,5325,"ppage_alloc = (IOUnitPage2_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);",none,GetIoUnitPage2(MPT_ADAPTER *ioc)," 	/* Read the config page */
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage_alloc = (IOUnitPage2_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page_dma);
+ 	if (ppage_alloc) {
+ 		memset((u8 *)ppage_alloc, 0, data_sz);
+ 		cfg.physAddr = page_dma;",
+./drivers/message/fusion/mptbase.c:4978:18-28: WARNING: casting value returned by memory allocation function to (LANPage0_t *) is useless.,4978,"ppage0_alloc = (LANPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);",none,GetLanConfigPages(MPT_ADAPTER *ioc)," 
+ 	if (hdr.PageLength > 0) {
+ 		data_sz = hdr.PageLength * 4;
+-		ppage0_alloc = (LANPage0_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page0_dma);
+ 		rc = -ENOMEM;
+ 		if (ppage0_alloc) {
+ 			memset((u8 *)ppage0_alloc, 0, data_sz);",
+./drivers/message/fusion/mptbase.c:5024:17-27: WARNING: casting value returned by memory allocation function to (LANPage1_t *) is useless.,5024,"ppage1_alloc = (LANPage1_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page1_dma);",none,GetLanConfigPages(MPT_ADAPTER *ioc)," 
+ 	data_sz = hdr.PageLength * 4;
+ 	rc = -ENOMEM;
+-	ppage1_alloc = (LANPage1_t *) pci_alloc_consistent(ioc->pcidev, data_sz, &page1_dma);
+ 	if (ppage1_alloc) {
+ 		memset((u8 *)ppage1_alloc, 0, data_sz);
+ 		cfg.physAddr = page1_dma;",
+./drivers/nfc/st-nci/se.c:334:17-43: WARNING: casting value returned by memory allocation function to (struct nfc_evt_transaction *) is useless.,334,"transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 					    skb->len - 2, GFP_KERNEL);",none,static int st_nci_hci_connectivity_event," 		    skb->data[0] != NFC_EVT_TRANSACTION_AID_TAG)
+ 			return -EPROTO;
+ 
+-		transaction = (struct nfc_evt_transaction *)devm_kzalloc(dev,
+ 					    skb->len - 2, GFP_KERNEL);
+ 		if (!transaction)
+ 			return -ENOMEM;",
+./drivers/scsi/esas2r/esas2r_ioctl.c:1551:21-23: WARNING: casting value returned by memory allocation function to (u8 *) is useless.,1551,"a->firmware.data = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 						    (size_t)length,
+ 						    (dma_addr_t *)&a->firmware.
+ 						    phys,",none,static int allocate_fw_buffers(struct es," 
+ 	a->firmware.orig_len = length;
+ 
+-	a->firmware.data = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 						    (size_t)length,
+ 						    (dma_addr_t *)&a->firmware.
+ 						    phys,",
+./drivers/scsi/esas2r/esas2r_ioctl.c:2067:23-25: WARNING: casting value returned by memory allocation function to (u8 *) is useless.,2067,"a->fs_api_buffer = (u8 *)dma_alloc_coherent(
+ 				&a->pcid->dev,
+ 				(size_t)a->fs_api_buffer_size,
+ 				(dma_addr_t *)&a->ppfs_api_buffer,",none,int esas2r_write_fs(struct esas2r_adapte,"re_allocate_buffer:
+ 			a->fs_api_buffer_size = length;
+ 
+-			a->fs_api_buffer = (u8 *)dma_alloc_coherent(
+ 				&a->pcid->dev,
+ 				(size_t)a->fs_api_buffer_size,
+ 				(dma_addr_t *)&a->ppfs_api_buffer,",
+./drivers/scsi/esas2r/esas2r_ioctl.c:1898:19-21: WARNING: casting value returned by memory allocation function to (u8 *) is useless.,1898,"a->vda_buffer = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 							 (size_t)
+ 							 VDA_MAX_BUFFER_SIZE,
+ 							 &dma_addr,",none,int esas2r_write_vda(struct esas2r_adapt," 
+ 	if (!a->vda_buffer) {
+ 		dma_addr_t dma_addr;
+-		a->vda_buffer = (u8 *)dma_alloc_coherent(&a->pcid->dev,
+ 							 (size_t)
+ 							 VDA_MAX_BUFFER_SIZE,
+ 							 &dma_addr,",
+./drivers/scsi/fnic/fnic_debugfs.c:61:16-41: WARNING: casting value returned by memory allocation function to (struct fc_trace_flag_type *) is useless.,61,"fc_trc_flag = (struct fc_trace_flag_type *)
+ 		vmalloc(sizeof(struct fc_trace_flag_type));",none,int fnic_debugfs_init(void)," 						fnic_trace_debugfs_root);
+ 
+ 	/* Allocate memory to structure */
+-	fc_trc_flag = (struct fc_trace_flag_type *)
+ 		vmalloc(sizeof(struct fc_trace_flag_type));
+ 
+ 	if (fc_trc_flag) {",
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega12_processpptables.c:255:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.,255,"pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);",none,static int init_powerplay_table_informat," 	phm_copy_clock_limits_array(hwmgr, &pptable_information->power_saving_clock_max, powerplay_table->PowerSavingClockMax, ATOM_VEGA12_PPCLOCK_COUNT);
+ 	phm_copy_clock_limits_array(hwmgr, &pptable_information->power_saving_clock_min, powerplay_table->PowerSavingClockMin, ATOM_VEGA12_PPCLOCK_COUNT);
+ 
+-	pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);
+ 	if (pptable_information->smc_pptable == NULL)
+ 		return -ENOMEM;
+ ",
+./drivers/gpu/drm/amd/powerplay/hwmgr/vega20_processpptables.c:893:37-46: WARNING: casting value returned by memory allocation function to (PPTable_t *) is useless.,893,"pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);",none,static int init_powerplay_table_informat," 				power_saving_clock_count);
+ 	}
+ 
+-	pptable_information->smc_pptable = (PPTable_t *)kmalloc(sizeof(PPTable_t), GFP_KERNEL);
+ 	if (pptable_information->smc_pptable == NULL)
+ 		return -ENOMEM;
+ ",
